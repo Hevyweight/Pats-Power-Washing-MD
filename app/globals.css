@@ -1,26 +1,27 @@
+/* Tailwind v4 entry */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Brand tokens (v4) */
+@theme {
+  --color-brand-dark: #03045E;
+  --color-brand-primary: #0077B6;
+  --color-brand-secondary: #00B4D8;
+  --color-brand-soft: #90E0EF;
+  --color-brand-light: #CAF0F8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Global tweaks */
+html { scroll-behavior: smooth; }
+:root { color-scheme: light; }
+
+/* Accessible focus ring (plain CSS is simplest) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-brand-secondary);
+  outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Section wrapper */
+.section {
+  @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
 }
