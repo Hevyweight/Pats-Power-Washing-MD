@@ -3,43 +3,48 @@ import CTAButtons from "./ctaButtons";
 export default function Hero() {
   return (
     <section className="bg-brand-dark text-white">
-      <div className="section grid lg:grid-cols-2 gap-10 py-12 md:py-16">
+      <div className="section grid lg:grid-cols-2 gap-10 py-12 md:py-16 items-center">
         {/* Left: Copy */}
-        <div className="space-y-5 self-center">
+        <div className="space-y-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft/80">
+            Exterior Cleaning in the DMV
+          </p>
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
-            Transform Your Home’s Curb Appeal
+            Transform Your Property&apos;s Curb Appeal
           </h1>
-          <p className="text-lg opacity-90">
-            Professional pressure washing across Maryland, DC, and Virginia —
-            house washing, driveways, decks, fences, roof soft washing, and storefronts.
-            Run by a hardworking, detail-oriented 20-year-old owner who treats your home like his own.
+          <p className="text-base md:text-lg opacity-90 max-w-xl">
+            Pat&apos;s Power Washing provides professional exterior cleaning services
+            for homes and small businesses across Maryland, DC, and Northern Virginia.
+            From house washing to driveways, patios, and storefronts, we use
+            commercial-grade equipment and proven techniques to rejuvenate your
+            property safely and effectively.
           </p>
           <CTAButtons />
-          <p className="text-sm opacity-90">Watch a quick clip from Pat’s recent jobs.</p>
+          <p className="text-sm opacity-90">
+            Watch a quick clip from a recent project.
+          </p>
         </div>
 
         {/* Right: iPhone (portrait) video */}
-        <div className="justify-self-end w-full max-w-sm md:max-w-md lg:max-w-lg">
-          <div className="rounded-2xl overflow-hidden bg-black/30 shadow" 
-               style={{ aspectRatio: "9 / 16", maxHeight: "34rem" }}>
+        <div className="w-full max-w-sm md:max-w-md lg:max-w-lg lg:justify-self-end lg:pr-4 xl:pr-8">
+          <div
+            className="rounded-2xl overflow-hidden bg-black/40 shadow-soft border border-white/10"
+            style={{ aspectRatio: "9 / 16", maxHeight: "34rem" }}
+          >
             <video
               className="h-full w-full object-cover"
-              src="/videos/hero-portrait.mp4"        // <-- drop your iPhone .mp4 here
-              // If you only have .mov, keep it as a <source>, but MP4/H.264 is better for web.
+              src="/videos/back_steps.mp4"
               playsInline
-              webkit-playsinline="true"
               muted
               controls
               preload="metadata"
-              poster="/videos/hero-portrait-poster.jpg" // optional
+              poster="/videos/hero-portrait-poster.jpg"
+              autoPlay
+              loop
             >
-              <source src="/videos/hero-portrait.mp4" type="video/mp4" />
-              <source src="/videos/hero-portrait.mov" type="video/quicktime" />
+              <source src="/videos/hero_video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
-          <div className="mt-2 text-xs text-white/80">
-            Tip: Export iPhone clips as <span className="font-semibold">H.264 .mp4</span> for widest compatibility.
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function ReviewsStrip() {
           {REVIEWS.map((r, i) => (
             <figure key={i} className="rounded-xl2 border border-slate-100 p-5 shadow-soft bg-brand-light/40">
               <blockquote className="text-slate-800">{r.text}</blockquote>
-              <figcaption className="mt-3 text-slate-600 text-sm">— {r.name}</figcaption>
+              <figcaption className="mt-3 text-slate-600 text-sm">— {r.name} ⭐️⭐️⭐️⭐️⭐️</figcaption>
             </figure>
           ))}
         </div>
