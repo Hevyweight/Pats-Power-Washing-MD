@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
 
         {/* Right: iPhone (portrait) video */}
-        <div className="flex justify-center ml-12 sm:ml-28 sm:translate-x-16">
+        <div className="flex justify-center ml-12 sm:ml-24 sm:translate-x-16">
           <div className="w-full max-w-sm md:max-w-md lg:max-w-lg lg:mr-2 xl:mr-6 md:mr-12">
             <div
               className="overflow-hidden bg-black/40 shadow-soft border border-white/10"
