@@ -5,21 +5,25 @@ export default function Hero() {
     <section className="bg-brand-dark text-white">
       <div className="section grid lg:grid-cols-2 gap-10 py-12 md:py-16 items-center">
         {/* Left: Copy */}
-        <div className="space-y-5 ml-8">
+        <div className="space-y-5 max-w-xl mx-auto text-center lg:text-left lg:ml-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft/80">
             Exterior Cleaning in the DMV
           </p>
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
             Transform Your Property&apos;s Curb Appeal
           </h1>
-          <p className="text-base md:text-lg opacity-90 max-w-xl">
+          <p className="text-base md:text-lg opacity-90">
             Pat&apos;s Power Washing provides professional exterior cleaning services
             for homes and small businesses across Maryland, DC, and Northern Virginia.
             From house washing to driveways, patios, and storefronts, we use
             commercial-grade equipment and proven techniques to rejuvenate your
             property safely and effectively.
           </p>
-          <CTAButtons />
+
+          <div className="flex justify-center lg:justify-start">
+            <CTAButtons />
+          </div>
+
           <p className="text-sm opacity-90">
             Watch a quick clip from a recent project.
           </p>
@@ -39,7 +43,6 @@ export default function Hero() {
                 muted
                 controls
                 preload="metadata"
-                poster="/videos/hero-portrait-poster.jpg"
                 autoPlay
                 loop
               >
