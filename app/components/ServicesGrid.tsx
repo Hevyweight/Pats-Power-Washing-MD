@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const SERVICES = [
-  { title: "House Washing / Siding", blurb: "Remove dirt, mold, and grime safely for like-new curb appeal." },
+  {title: "House Soft Wash",blurb:"Gentle, low-pressure soft washing that safely removes built-up dirt, mold, and mildew so your siding looks freshly cleaned again."},
   { title: "Driveways & Sidewalks", blurb: "Deep clean oil, tire marks, and buildup for a spotless entrance." },
   { title: "Patios, Porches & Decks", blurb: "Make outdoor spaces clean, safe, and ready to enjoy." },
   { title: "Fence Cleaning", blurb: "Restore brightness and protect surfaces from premature wear." },

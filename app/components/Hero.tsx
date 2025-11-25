@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="bg-brand-dark text-white">
       <div className="section grid lg:grid-cols-2 gap-10 py-12 md:py-16 items-center">
         {/* Left: Copy */}
-        <div className="space-y-5">
+        <div className="space-y-5 ml-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft/80">
             Exterior Cleaning in the DMV
           </p>
@@ -26,25 +26,27 @@ export default function Hero() {
         </div>
 
         {/* Right: iPhone (portrait) video */}
-        <div className="w-full max-w-sm md:max-w-md lg:max-w-lg lg:justify-self-end lg:pr-4 xl:pr-8">
-          <div
-            className="rounded-2xl overflow-hidden bg-black/40 shadow-soft border border-white/10"
-            style={{ aspectRatio: "9 / 16", maxHeight: "34rem" }}
-          >
-            <video
-              className="h-full w-full object-cover"
-              src="/videos/back_steps.mp4"
-              playsInline
-              muted
-              controls
-              preload="metadata"
-              poster="/videos/hero-portrait-poster.jpg"
-              autoPlay
-              loop
+        <div className="flex justify-center lg:justify-end ml-28">
+          <div className="w-full max-w-sm md:max-w-md lg:max-w-lg lg:mr-2 xl:mr-6">
+            <div
+              className="overflow-hidden bg-black/40 shadow-soft border border-white/10"
+              style={{ aspectRatio: "9 / 16", maxHeight: "34rem" }}
             >
-              <source src="/videos/hero_video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              <video
+                className="h-full w-full object-cover"
+                src="/videos/back_steps.mp4"
+                playsInline
+                muted
+                controls
+                preload="metadata"
+                poster="/videos/hero-portrait-poster.jpg"
+                autoPlay
+                loop
+              >
+                <source src="/videos/hero_video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </div>

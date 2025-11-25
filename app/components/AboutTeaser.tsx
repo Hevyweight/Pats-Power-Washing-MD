@@ -1,10 +1,12 @@
 import CTAButtons from "./ctaButtons";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutTeaser() {
   return (
     <section className="section py-12">
       <div className="grid md:grid-cols-2 gap-8 items-center">
+        {/* Left: Copy */}
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-primary">
             About Pat&apos;s Power Washing
@@ -35,34 +37,15 @@ export default function AboutTeaser() {
           </div>
         </div>
 
-        <div className="rounded-xl2 bg-brand-soft/40 p-6">
-          <div className="text-sm text-slate-700">
-            <div className="font-semibold text-brand-dark">
-              See real before &amp; after results
-            </div>
-            <p className="mt-2 mb-3 text-slate-700">
-              We regularly share project videos, reels, and transformations so you
-              can see our process and the quality of our work.
-            </p>
-            <div className="space-y-1">
-              <a
-                className="block text-brand-primary underline underline-offset-4"
-                href="https://instagram.com/patspowerwashing_dmv"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @patspowerwashing_dmv
-              </a>
-              <a
-                className="block text-brand-primary underline underline-offset-4"
-                href="https://instagram.com/pat_dugan37"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @pat_dugan37
-              </a>
-            </div>
-          </div>
+        {/* Right: Photo instead of blue box */}
+        <div className="relative rounded-2xl overflow-hidden shadow-soft">
+          <Image
+            src="/contact.jpg" // <-- drop your actual image path here
+            alt="Pat power washing a client's property"
+            width={900}
+            height={600}
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
     </section>

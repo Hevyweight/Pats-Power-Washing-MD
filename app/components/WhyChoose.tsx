@@ -1,6 +1,6 @@
 export default function WhyChoose() {
   const items = [
-    "Locally owned and operated in the DMV",
+    "Liscened and insured in the DMV",
     "Professional exterior cleaning for homes and small businesses",
     "Fast response times and reliable scheduling",
     "Transparent pricing and free, no-obligation quotes",
@@ -36,7 +36,7 @@ export default function WhyChoose() {
               <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-secondary/10 text-brand-primary text-xs font-bold">
                 ✓
               </span>
-              <span className="text-sm md:text-[15px] leading-snug">{t}</span>
+              <span className="translate-y-1 text-sm md:text-[15px] leading-snug">{t}</span>
             </li>
           ))}
         </ul>
