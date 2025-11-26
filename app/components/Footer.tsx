@@ -35,34 +35,34 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://instagram.com/patspowerwashing_dmv"
+                href="https://instagram.com/yourhandle"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"
                 aria-label="Instagram"
-                >
-                <FaInstagram className="text-sm" />
-                </a>
+              >
+                <FaInstagram className="text-sm text-white hover:text-[#E4405F]" />
+              </a>
 
-                <a
-                href="https://www.facebook.com/..."
+              <a
+                href="https://facebook.com/yourpage"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"
                 aria-label="Facebook"
-                >
-                <FaFacebookF className="text-sm" />
-                </a>
+              >
+                <FaFacebookF className="text-sm text-white hover:text-[#1877F2]" />
+              </a>
 
-                <a
-                href="https://www.linkedin.com/..."
+              <a
+                href="https://linkedin.com/yourpage"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"
                 aria-label="LinkedIn"
-                >
-                <FaLinkedinIn className="text-sm" />
-                </a>
+              >
+                <FaLinkedinIn className="text-sm text-white hover:text-[#0A66C2]" />
+              </a>
             </div>
           </div>
 
