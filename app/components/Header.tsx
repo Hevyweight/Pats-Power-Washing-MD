@@ -24,7 +24,7 @@ export default function Header() {
         {/* Left: logo */}
         <Link href="/" className="flex items-center gap-2" aria-label="Pat’s Power Washing — Home">
           <Image
-            src="/logo-light.avif"         // make sure this exists in /public
+            src="/logo.png"         // make sure this exists in /public
             alt="Pat’s Power Washing logo"
             width={160}
             height={160}

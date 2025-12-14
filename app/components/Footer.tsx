@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/">
               <Image
-                src="/logo-light.avif"
+                src="/logo.png"
                 alt="Pat's Power Washing"
                 width={140}
                 height={40}

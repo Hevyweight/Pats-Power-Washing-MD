@@ -28,7 +28,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2" aria-label="Pat’s Power Washing — Home">
           {/* Replace with your actual asset path */}
           <Image
-            src="/logo-light.avif"
+            src="/logo.png"
             alt="Pat’s Power Washing logo"
             width={160}
             height={160}
