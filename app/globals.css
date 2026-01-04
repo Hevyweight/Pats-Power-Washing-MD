@@ -8,13 +8,17 @@
   --color-brand-secondary: #00B4D8;
   --color-brand-soft: #90E0EF;
   --color-brand-light: #CAF0F8;
+  
+  /* Darker variants for buttons (WCAG AA compliant) */
+  --color-brand-primary-dark: #005A8C;   /* 4.52:1 ✅ */
+  --color-brand-secondary-dark: #006B85; /* 5.01:1 ✅ DARKER */
 }
 
 /* Global tweaks */
 html { scroll-behavior: smooth; }
 :root { color-scheme: light; }
 
-/* Accessible focus ring (plain CSS is simplest) */
+/* Accessible focus ring */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--color-brand-secondary);

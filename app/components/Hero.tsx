@@ -1,4 +1,5 @@
 import CTAButtons from "./ctaButtons";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -19,36 +20,26 @@ export default function Hero() {
             commercial-grade equipment and proven techniques to rejuvenate your
             property safely and effectively.
           </p>
-
           <div className="flex justify-center lg:justify-start">
             <CTAButtons />
           </div>
-
-          <p className="text-sm opacity-90">
-            Watch a quick clip from a recent project.
-          </p>
         </div>
 
-        {/* Right: iPhone (portrait) video */}
-        <div className="flex justify-center ml-12 sm:ml-24 sm:translate-x-16">
-          <div className="w-full max-w-sm md:max-w-md lg:max-w-lg lg:mr-2 xl:mr-6 md:mr-12">
+        {/* Right: iPhone (portrait) image */}
+        <div className="flex justify-center lg:ml-12 lg:sm:ml-24 lg:sm:translate-x-16">
+          <div className="w-64 sm:w-80 md:max-w-md lg:max-w-lg lg:mr-2 xl:mr-6 md:mr-12">
             <div
-              className="overflow-hidden bg-black/40 shadow-soft border border-white/10"
+              className="relative overflow-hidden bg-black/40 shadow-soft border border-white/10"
               style={{ aspectRatio: "9 / 16", maxHeight: "34rem" }}
             >
-              <video
-                className="h-full w-full object-cover"
-                src="/videos/back_steps.mp4"
-                playsInline
-                muted
-                controls
-                preload="metadata"
-                autoPlay
-                loop
-              >
-                <source src="/videos/hero_video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <Image
+                className="object-cover"
+                src="/images/hero.jpg"
+                alt="Power washing back steps before and after"
+                fill
+                sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, (max-width: 1024px) 448px, 660px"
+                quality={80}  // Add this - reduces file size
+              />
             </div>
           </div>
         </div>

@@ -38,13 +38,14 @@ export default function AboutTeaser() {
         </div>
 
         {/* Right: Photo instead of blue box */}
-        <div className="relative rounded-2xl overflow-hidden shadow-soft">
+        <div className="relative rounded-2xl overflow-hidden shadow-soft h-[400px] md:h-[500px]">
           <Image
-            src="/contact.jpg" // <-- drop your actual image path here
+            src="/images/contact.jpg"
             alt="Pat power washing a client's property"
-            width={900}
-            height={600}
-            className="h-full w-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 759px"
+            quality={80}
+            className="object-cover"
           />
         </div>
       </div>

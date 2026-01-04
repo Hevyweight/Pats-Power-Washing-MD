@@ -23,7 +23,7 @@ export default function ServicesGrid() {
           ))}
         </div>
         <div className="mt-6">
-          <Link href="/services" className="inline-block underline text-brand-primary hover:opacity-80">
+          <Link href="/services" className="inline-block underline text-brand-dark hover:text-brand-primary-dark transition">
             View all services →
           </Link>
         </div>

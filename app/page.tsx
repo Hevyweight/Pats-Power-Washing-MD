@@ -3,7 +3,7 @@ import WhyChoose from "./components/WhyChoose";
 import AboutTeaser from "./components/AboutTeaser";
 import ServicesGrid from "./components/ServicesGrid";
 import HowItWorks from "./components/HowItWorks";
-import ReviewsStrip from "./components/ReviewsStrip";
+import ReviewsStrip from "./components/Reviews";
 import BottomCTA from "./components/BottomCTA";
 
 export default function HomePage() {

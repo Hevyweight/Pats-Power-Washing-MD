@@ -1,3 +1,4 @@
+// app/components/Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -9,7 +10,6 @@ const serviceLinks = [
   { href: "/services#driveway", label: "Driveways & Sidewalks" },
   { href: "/services#patio", label: "Patios, Porches & Decks" },
   { href: "/services#fence", label: "Fence Cleaning" },
-  { href: "/services#roof", label: "Roof Soft Washing" },
   { href: "/services#storefront", label: "Storefronts & Entryways" },
 ];
 
@@ -22,17 +22,18 @@ export default function Header() {
       {/* Primary row */}
       <div className="section h-16 md:h-20 flex items-center justify-between">
         {/* Left: logo */}
-        <Link href="/" className="flex items-center gap-2" aria-label="Pat’s Power Washing — Home">
+        <Link href="/" className="flex items-center gap-2" aria-label="Pat's Power Washing — Home">
           <Image
-            src="/logo.png"         // make sure this exists in /public
-            alt="Pat’s Power Washing logo"
+            src="/images/logo.png"
+            alt="Pat's Power Washing logo"
             width={160}
             height={160}
             className="h-12 w-auto md:h-16 lg:h-20"
-            priority
+            sizes="(max-width: 768px) 48px, (max-width: 1024px) 64px, 80px"
+            quality={90}
           />
           <span className="hidden sm:inline font-semibold tracking-tight text-brand-dark leading-none">
-            Pat’s Power Washing
+            Pat&#39;s Power Washing
           </span>
         </Link>
 
@@ -110,28 +111,36 @@ export default function Header() {
           </a>
           <Link
             href="/contact"
-            className="rounded-xl px-4 py-2 bg-brand-secondary text-white font-medium shadow hover:opacity-95"
+            className="rounded-xl px-4 py-2 bg-brand-secondary-dark text-white font-medium shadow hover:opacity-95"
           >
             Get a Free Quote
           </Link>
         </div>
 
-        {/* Mobile: hamburger */}
-        <button
-          className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-slate-200 text-slate-700 hover:bg-slate-50"
-          aria-label="Toggle menu"
-          onClick={() => setMenuOpen((v) => !v)}
-        >
-          {menuOpen ? (
-            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        {/* Mobile: Get Quote + Hamburger */}
+        <div className="md:hidden flex items-center gap-2">
+          <Link
+            href="/contact"
+            className="rounded-xl px-3 py-2 bg-brand-secondary-dark text-white text-sm font-medium shadow hover:opacity-95"
+          >
+            Get A Free Quote
+          </Link>
+          <button
+            className="inline-flex items-center justify-center h-10 w-10 rounded-md border border-slate-200 text-slate-700 hover:bg-slate-50"
+            aria-label="Toggle menu"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? (
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile panel */}
@@ -185,13 +194,6 @@ export default function Header() {
             >
               Call: 240-968-4892
             </a>
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="rounded-xl px-4 py-2 bg-brand-secondary text-white text-center shadow"
-            >
-              Get a Free Quote
-            </Link>
           </div>
         </div>
       )}

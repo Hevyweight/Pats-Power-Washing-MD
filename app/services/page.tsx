@@ -53,7 +53,7 @@ export default function ServicesPage() {
           {/* Image right */}
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200">
             <Image
-              src="/images/services/house-wash.jpg" // TODO: update to your real image
+              src="/images/services/house_wash.jpg" // TODO: update to your real image
               alt="House soft washing in progress"
               fill
               className="object-cover"
@@ -95,7 +95,7 @@ export default function ServicesPage() {
           {/* Image right */}
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200">
             <Image
-              src="/images/services/driveway-cleaning.jpg"
+              src="/images/services/sidewalk.jpg"
               alt="Pressure washing a concrete driveway"
               fill
               className="object-cover"
@@ -134,7 +134,7 @@ export default function ServicesPage() {
 
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200">
             <Image
-              src="/images/services/patio-deck.jpg"
+              src="/images/services/porch_cleaning.jpg"
               alt="Clean patio and deck area"
               fill
               className="object-cover"
@@ -174,48 +174,8 @@ export default function ServicesPage() {
 
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200">
             <Image
-              src="/images/services/fence-cleaning.jpg"
+              src="/images/services/fence_cleaning.jpg"
               alt="Fence cleaning results"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Roof soft washing */}
-      <section id="roof" className="border-t border-slate-200 pt-8">
-        <div className="grid gap-8 md:grid-cols-2 items-center">
-          <div>
-            <h2 className="text-2xl font-semibold text-brand-dark">
-              Roof Soft Washing
-            </h2>
-            <p className="mt-3 text-slate-700 max-w-2xl">
-              Dark streaks and organic growth on shingles are more than just
-              cosmetic. Our roof soft washing uses low pressure and specialized
-              solutions to safely remove algae and buildup without damaging your
-              roofing materials.
-            </p>
-            <p className="mt-2 text-slate-700">
-              <span className="font-semibold">Why it matters:</span> A clean
-              roof boosts curb appeal and can help extend the life of your
-              shingles when maintained properly.
-            </p>
-            <p className="mt-1 text-slate-700">
-              <span className="font-semibold">What to expect:</span> An
-              inspection of roof condition, a gentle, controlled soft-wash
-              application, and a thorough rinse where appropriate.
-            </p>
-            <p className="mt-3 text-brand-primary font-medium">
-              Ask if your roof is a good candidate for soft washing during your
-              quote.
-            </p>
-          </div>
-
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200">
-            <Image
-              src="/images/services/roof-softwash.jpg"
-              alt="Roof soft washing service"
               fill
               className="object-cover"
             />
@@ -253,7 +213,7 @@ export default function ServicesPage() {
 
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200">
             <Image
-              src="/images/services/storefront-cleaning.jpg"
+              src="/images/services/store_front.jpg"
               alt="Clean storefront exterior"
               fill
               className="object-cover"

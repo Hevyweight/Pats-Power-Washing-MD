@@ -1,4 +1,4 @@
-import ElfsightGoogleReviews from "../components/ElfsightGoogleReviews";
+import ElfsightGoogleReviews from "../components/GoogleReviews";
 
 export default function ReviewsPage() {
   return (

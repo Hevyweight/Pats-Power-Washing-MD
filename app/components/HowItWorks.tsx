@@ -11,7 +11,7 @@ export default function HowItWorks() {
       <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {steps.map((s) => (
           <div key={s.n} className="rounded-xl2 border border-slate-100 p-5 shadow-soft bg-white">
-            <div className="w-8 h-8 rounded-full bg-brand-secondary text-white flex items-center justify-center font-bold">
+            <div className="w-8 h-8 rounded-full bg-brand-secondary-dark text-white flex items-center justify-center font-bold">
               {s.n}
             </div>
             <div className="mt-3 font-semibold">{s.t}</div>
