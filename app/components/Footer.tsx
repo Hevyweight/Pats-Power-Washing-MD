@@ -27,6 +27,7 @@ export default function Footer() {
 
             <div className="space-y-1 text-sm">
               <div className="font-semibold text-base">240-968-4892</div>
+
               <a
                 href="mailto:pdugan1@patspowerwashing.com"
                 className="font-medium text-brand-soft hover:text-white transition"
@@ -78,141 +79,107 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Location / service area */}
+          {/* Services */}
           <div className="space-y-2 translate-y-2 text-sm">
-            <h3 className="text-base font-semibold">Service Area</h3>
-
-            <div className="mt-1 text-slate-200/90 leading-relaxed space-y-2">
-              {/* Maryland */}
-              <div>
-                <div className="font-medium text-slate-100">Maryland</div>
-                <div className="pl-3 mt-0.5 space-y-0.5 text-xs text-slate-300/90">
-                  <div>Montgomery County</div>
-                  <div>Prince George&apos;s County</div>
-                  <div>Howard County</div>
-                  <div>Anne Arundel County</div>
-                </div>
-              </div>
-
-              {/* DC */}
-              <div>
-                <div className="font-medium text-slate-100">Washington, DC</div>
-                <div className="pl-3 mt-0.5 text-xs text-slate-300/90">
-                  <div>District-wide</div>
-                </div>
-              </div>
-
-              {/* Northern Virginia */}
-              <div>
-                <div className="font-medium text-slate-100">Northern Virginia</div>
-                <div className="pl-3 mt-0.5 space-y-0.5 text-xs text-slate-300/90">
-                  <div>Arlington County</div>
-                  <div>Fairfax County</div>
-                  <div>Alexandria</div>
-                  <div>Loudoun County</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Services & links */}
-          <div className="space-y-2 translate-y-2 pb-12 text-sm">
-            <h3 className="text-base font-semibold">Services &amp; Links</h3>
-
+            <h3 className="text-base font-semibold">Services</h3>
             <div className="mt-1 text-slate-200/90 leading-relaxed space-y-1.5">
-              {/* Services */}
-              <Link
-                href="/services#house-soft-wash"
-                className="block hover:text-brand-soft transition"
-              >
-                House Soft Wash
+              <Link href="/services/house-washing" className="block hover:text-brand-soft transition">
+                House Washing
               </Link>
-
-              <Link
-                href="/services#concrete-driveways"
-                className="block hover:text-brand-soft transition"
-              >
-                Concrete &amp; Driveway Cleaning
+              <Link href="/services/driveway-cleaning" className="block hover:text-brand-soft transition">
+                Driveway Cleaning
               </Link>
-
-              <Link
-                href="/services#patios-walkways"
-                className="block hover:text-brand-soft transition"
-              >
-                Patios, Walkways &amp; Steps
+              <Link href="/services/roof-cleaning" className="block hover:text-brand-soft transition">
+                Roof Cleaning
               </Link>
-
-              <Link
-                href="/services#decks-fences"
-                className="block hover:text-brand-soft transition"
-              >
-                Decks &amp; Fences
+              <Link href="/services/pressure-washing" className="block hover:text-brand-soft transition">
+                Pressure Washing
               </Link>
-
-              <Link
-                href="/services#storefronts"
-                className="block hover:text-brand-soft transition"
-              >
-                Storefronts &amp; Commercial
+              <Link href="/services/commercial-pressure-washing" className="block hover:text-brand-soft transition">
+                Commercial Services
               </Link>
-
-              {/* Small visual separator */}
-              <div className="h-px w-10 bg-white/20 my-3" />
-
-              <h3 className="text-base text-white font-semibold">Quick Links</h3>
-
-              {/* Company pages */}
-              <Link
-                href="/about"
-                className="block hover:text-brand-soft transition"
-              >
-                About Pat&apos;s Power Washing
-              </Link>
-
-              <Link
-                href="/gallery"
-                className="block hover:text-brand-soft transition"
-              >
-                Before &amp; After Gallery
-              </Link>
-
-              <Link
-                href="/contact"
-                className="block hover:text-brand-soft transition"
-              >
-                Get a Free Estimate
+              <Link href="/services" className="block hover:text-brand-soft transition font-medium mt-2">
+                View All Services →
               </Link>
             </div>
           </div>
 
-          {/* Newsletter / CTA */}
-          <div className="space-y-3 text-sm">
-            <h3 className="text-base font-semibold">Get Updates &amp; Offers</h3>
-            <p className="text-slate-200/80">
-              Join our list to get seasonal reminders and occasional promos on
-              house washes, driveways, and more.
-            </p>
-            <form
-              className="mt-2 space-y-2"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm placeholder:text-slate-300/60 focus:outline-none focus:ring-1 focus:ring-brand-soft"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm placeholder:text-slate-300/60 focus:outline-none focus:ring-1 focus:ring-brand-soft"
-              />
-              <button
-                type="submit"
-                className="w-full rounded-xl bg-brand-soft px-3 py-2 text-center text-sm font-semibold text-brand-dark hover:opacity-90 transition"
-              >
-                Get Updates
-              </button>
-            </form>
+          {/* Service Areas */}
+          <div className="space-y-2 translate-y-2 text-sm">
+            <h3 className="text-base font-semibold">Service Areas</h3>
+            <div className="mt-1 text-slate-200/90 leading-relaxed space-y-1.5">
+              <Link href="/service-areas/maryland" className="block hover:text-brand-soft transition">
+                Maryland
+              </Link>
+              <Link href="/service-areas/washington-dc" className="block hover:text-brand-soft transition">
+                Washington DC
+              </Link>
+              <Link href="/service-areas/virginia" className="block hover:text-brand-soft transition">
+                Virginia
+              </Link>
+              <Link href="/service-areas/delaware" className="block hover:text-brand-soft transition">
+                Delaware
+              </Link>
+              <Link href="/service-areas/pennsylvania" className="block hover:text-brand-soft transition">
+                Pennsylvania
+              </Link>
+              
+              <div className="h-px w-10 bg-white/20 my-3" />
+              
+              <Link href="/service-areas/college-park-md" className="block hover:text-brand-soft transition text-xs">
+                College Park, MD
+              </Link>
+              <Link href="/service-areas/silver-spring-md" className="block hover:text-brand-soft transition text-xs">
+                Silver Spring, MD
+              </Link>
+              <Link href="/service-areas/silver-spring-md" className="block hover:text-brand-soft transition text-xs">
+                Greenbelt, MD
+              </Link>
+              <Link href="/service-areas/bowie-md" className="block hover:text-brand-soft transition text-xs">
+                Bowie, MD
+              </Link>
+              <Link href="/service-areas/laurel-md" className="block hover:text-brand-soft transition text-xs">
+                Laurel, MD
+              </Link>
+              <Link href="/service-areas/laurel-md" className="block hover:text-brand-soft transition text-xs">
+                Arlington, VA
+              </Link>
+              <Link href="/service-areas/alexandria-va" className="block hover:text-brand-soft transition text-xs">
+                Alexandria, VA
+              </Link>
+              <Link href="/service-areas" className="block hover:text-brand-soft transition font-medium mt-2">
+                View All Service Areas →
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Links + Resources */}
+          <div className="space-y-2 translate-y-2 text-sm">
+            <h3 className="text-base font-semibold">Company</h3>
+            <div className="mt-1 text-slate-200/90 leading-relaxed space-y-1.5">
+              <Link href="/about" className="block hover:text-brand-soft transition">
+                About Us
+              </Link>
+              <Link href="/gallery" className="block hover:text-brand-soft transition">
+                Gallery
+              </Link>
+              <Link href="/reviews" className="block hover:text-brand-soft transition">
+                Reviews
+              </Link>
+              <Link href="/contact" className="block hover:text-brand-soft transition">
+                Contact
+              </Link>
+              
+              <div className="h-px w-10 bg-white/20 my-3" />
+              
+              <h3 className="text-base font-semibold text-white">Resources</h3>
+              <Link href="/blog" className="block hover:text-brand-soft transition">
+                Blog
+              </Link>
+              <Link href="/faq" className="block hover:text-brand-soft transition">
+                FAQs
+              </Link>
+            </div>
           </div>
         </div>
       </div>

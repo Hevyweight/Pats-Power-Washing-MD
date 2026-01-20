@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Image from "next/image";
+import { FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 export const metadata = {
   title: "Services | Pat’s Power Washing",
@@ -6,19 +8,45 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="section py-12 space-y-12">
-      {/* Intro */}
-      <header>
-        <h1 className="text-3xl md:text-4xl font-bold text-brand-dark">
-          Exterior Cleaning Services
-        </h1>
-        <p className="mt-4 text-slate-700 max-w-2xl">
-          Pat&apos;s Power Washing provides professional pressure washing and
-          soft washing services for homes, rentals, and small businesses across
-          Maryland, DC, and Northern Virginia. We focus on safe cleaning
-          methods, clear communication, and results you can see immediately.
-        </p>
+    <>
+      <div>
+        <header className="bg-linear-to-b from-brand-dark to-brand-primary-dark text-white py-16 md:py-20">
+        <div className="section max-w-6xl text-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-6 border border-white/20">
+            <FaMapMarkerAlt className="text-brand-secondary-dark" />
+            <span>Serving the DMV Area</span>
+          </div>
+          
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Exterior Cleaning Services
+          </h1>
+          
+          <p className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto mb-8">
+            Pat&apos;s Power Washing provides professional pressure washing and
+            soft washing services for homes, rentals, and small businesses across
+            Maryland, DC, and Northern Virginia. We focus on safe cleaning
+            methods, clear communication, and results you can see immediately.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact"
+              className="bg-brand-secondary-dark hover:opacity-90 px-8 py-4 rounded-xl font-semibold text-lg text-center"
+            >
+              Get Free Quote
+            </Link>
+            <a
+              href="tel:2409684892"
+              className="bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-4 rounded-xl font-semibold text-lg inline-flex items-center justify-center gap-2"
+            >
+              <FaPhone />
+              240-968-4892
+            </a>
+          </div>
+        </div>
       </header>
+    </div>
+    <div className="section py-12 space-y-12">
 
       {/* House washing */}
       <section id="house-washing" className="border-t border-slate-200 pt-8">
@@ -248,5 +276,6 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

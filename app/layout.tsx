@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
@@ -24,9 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       {/* Do NOT put icon <link> tags here. Metadata handles it automatically. */}
-      <body className="bg-white text-slate-900">
-        <Header />
-        <main>{children}</main>
+      <body className="bg-white text-slate-900 min-h-screen flex flex-col">
+        <Navigation />
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
