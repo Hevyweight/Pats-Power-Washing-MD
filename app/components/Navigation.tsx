@@ -218,6 +218,12 @@ export default function Navigation() {
             href="/contact"
             className="rounded-xl px-3 py-2 bg-brand-secondary-dark text-white text-sm font-medium shadow hover:opacity-95"
           >
+            240-968-4892
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-xl px-3 py-2 bg-brand-secondary-dark text-white text-sm font-medium shadow hover:opacity-95"
+          >
             Get A Free Quote
           </Link>
           <button
@@ -308,7 +314,7 @@ export default function Navigation() {
             <Link href="/contact" onClick={() => setMenuOpen(false)} className="py-2">
               Contact
             </Link>
-
+            {/*
             <div className="h-px bg-slate-200 my-2" />
 
             <a
@@ -317,6 +323,7 @@ export default function Navigation() {
             >
               Call: 240-968-4892
             </a>
+            */}
           </div>
         </div>
       )}
