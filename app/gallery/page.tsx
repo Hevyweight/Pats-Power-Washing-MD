@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 // Updated query to get videos from Sanity
 const videosQuery = `*[_type == "instagramPost" && mediaType == "video"] | order(displayOrder asc, postedDate desc) {
   _id,
-  "videoUrl": videoFile.asset->url,
+  "videoUrl": videoFile.asset->{url}.url,
   videoPosterFilename,
   caption,
   instagramUrl,
