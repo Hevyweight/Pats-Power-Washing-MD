@@ -136,22 +136,31 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://patspowerwashing.com/how-to-power-wash</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://patspowerwashing.com/pressure-washer-rental</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://patspowerwashing.com/blog/how-often-should-you-pressure-wash-your-house</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://patspowerwashing.com/blog/best-time-pressure-wash</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://patspowerwashing.com/blog/pressure-washing-damage</loc>
+    <loc>https://patspowerwashing.com/blog/does-pressure-wash-damage-paint</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://patspowerwashing.com/blog/pressure-washing-cost</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://patspowerwashing.com/blog/power-vs-pressure-washing</loc>
+  </url><url>
+    <loc>https://patspowerwashing.com/blog/power-washing-vs-pressure-washing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
