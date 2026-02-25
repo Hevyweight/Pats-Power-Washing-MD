@@ -330,64 +330,6 @@ export default function ServiceAreasPage() {
                 </div>
               ))}
             </div>
-            
-            {/* Pennsylvania */}
-            <div className="bg-white rounded-xl shadow-md p-8">
-                <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-brand-primary-dark text-white rounded-lg flex items-center justify-center font-bold text-xl">
-                    PA
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold">Pennsylvania</h3>
-                    <Link href="/areas/pennsylvania" className="text-brand-primary-dark text-sm hover:underline">
-                    View Pennsylvania →
-                    </Link>
-                </div>
-                </div>
-                
-                {serviceAreas.pennsylvania.counties.map((county) => (
-                <div key={county.name} className="mb-6">
-                    <h4 className="font-semibold text-slate-700 mb-2">{county.name}</h4>
-                    <ul className="space-y-2">
-                    {county.cities.map((city) => (
-                        <li key={city} className="flex items-start gap-2 text-sm text-slate-600">
-                        <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>{city}</span>
-                        </li>
-                    ))}
-                    </ul>
-                </div>
-                ))}
-            </div>
-
-            {/* Delaware */}
-            <div className="bg-white rounded-xl shadow-md p-8">
-                <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-brand-primary-dark text-white rounded-lg flex items-center justify-center font-bold text-xl">
-                    DE
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold">Delaware</h3>
-                    <Link href="/areas/delaware" className="text-brand-primary-dark text-sm hover:underline">
-                    View Delaware →
-                    </Link>
-                </div>
-                </div>
-                
-                {serviceAreas.delaware.counties.map((county) => (
-                <div key={county.name} className="mb-6">
-                    <h4 className="font-semibold text-slate-700 mb-2">{county.name}</h4>
-                    <ul className="space-y-2">
-                    {county.cities.map((city) => (
-                        <li key={city} className="flex items-start gap-2 text-sm text-slate-600">
-                        <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>{city}</span>
-                        </li>
-                    ))}
-                    </ul>
-                </div>
-                ))}
-            </div>
           </div>
         </div>
       </section>
