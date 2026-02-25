@@ -149,7 +149,7 @@ export default function GoogleReviews({
         {googleUrl && (
           <div className="text-center">
             <a
-              href={googleUrl}
+              href="https://www.google.com/maps/place/Pat%E2%80%99s+Power+Washing/@38.998185,-76.949655,17z/data=!4m8!3m7!1s0x653137210796fb15:0x93132ff8beaa4725!8m2!3d38.998185!4d-76.949655!9m1!1b1!16s%2Fg%2F11yf5xkbrt?entry=ttu&g_ep=EgoyMDI2MDIyMi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-gray-200"
