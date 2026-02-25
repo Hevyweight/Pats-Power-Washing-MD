@@ -189,9 +189,14 @@ export default function Footer() {
         <div>
           © {new Date().getFullYear()} Pat&apos;s Power Washing. All rights reserved.
         </div>
-        <div className="opacity-80">
-          Serving Maryland, DC &amp; Northern Virginia.
-        </div>
+        <a
+          href="https://scorecentury.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="opacity-80 hover:opacity-100 transition-opacity"
+        >
+          Website by <span className="font-bold text-white brightness-200">Century Digital</span>
+        </a>
       </div>
     </footer>
   );
