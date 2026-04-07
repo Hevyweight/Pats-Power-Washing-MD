@@ -3,6 +3,7 @@ import { client } from '@/lib/sanity'
 import { PortableText, PortableTextBlock } from '@portabletext/react'
 import { Fragment } from 'react'
 import LocationHero from '@/app/components/location/LocationHero'
+import LocationMainContent from '@/app/components/location/LocationMainContent'
 import ServicesListGrid from '@/app/components/location/ServicesListGrid'
 import WhyLocalNeedsCleaning from '@/app/components/location/WhyLocalNeedsCleaning'
 import NeighborhoodsGrid from '@/app/components/location/NeighborhoodsGrid'
@@ -16,7 +17,15 @@ interface LocationPageData {
   state: string
   heroSubtitle: string
   heroImage?: string
-  mainContent: PortableTextBlock[]
+  mainContent: {
+    heading?: string
+    subheading?: string
+    body?: PortableTextBlock[]
+    image?: {
+      url: string
+      alt?: string
+    }
+  }
   componentOrder: string[]
   servicesOffered: Array<{
     name: string
@@ -45,7 +54,15 @@ export default async function LocationPage({
       state,
       heroSubtitle,
       "heroImage": heroImage.asset->url,
-      mainContent,
+      mainContent {
+        heading,
+        subheading,
+        body,
+        "image": image {
+          alt,
+          "url": asset->url,
+        }
+      },
       componentOrder,
       servicesOffered,
       whyNeedsCleaning,
@@ -92,11 +109,13 @@ export default async function LocationPage({
         backgroundImage={page.heroImage}
       />
 
-      <section className="section py-12 max-w-4xl">
-        <div className="prose prose-lg max-w-none">
-          <PortableText value={page.mainContent} />
-        </div>
-      </section>
+      <LocationMainContent
+        heading={page.mainContent?.heading}
+        subheading={page.mainContent?.subheading}
+        body={page.mainContent?.body}
+        image={page.mainContent?.image}
+        city={page.city}
+      />
 
       {/* DYNAMIC: Render in chosen order */}
       {page.componentOrder?.map((key: string) => 

@@ -56,9 +56,41 @@ export const locationPage = defineType({
     defineField({
       name: 'mainContent',
       title: 'Main Introduction',
-      type: 'array',
-      of: [{type: 'block'}],
-      description: 'Opening content about serving this location'
+      type: 'object',
+      fields: [
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          description: 'e.g. "Why Bowie Homes Need Regular Exterior Cleaning"',
+        },
+        {
+          name: 'subheading',
+          title: 'Eyebrow Label (optional)',
+          type: 'string',
+          description: 'Short line above the heading, e.g. "Serving Bowie, MD"',
+        },
+        {
+          name: 'body',
+          title: 'Body Text',
+          type: 'array',
+          of: [{ type: 'block' }],
+          description: 'Main descriptive copy — 2 to 4 paragraphs works best',
+        },
+        {
+          name: 'image',
+          title: 'Section Image',
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alt text',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     }),
     
     // SERVICES OFFERED

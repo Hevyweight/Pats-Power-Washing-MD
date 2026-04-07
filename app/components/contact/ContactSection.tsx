@@ -80,7 +80,7 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-semibold text-brand-dark mb-1">Email</h3>
                   <a href="mailto:info@patspowerwashing.com" className="text-brand-primary hover:text-brand-primary-dark">
-                    info@patspowerwashing.com
+                    pdugan1@patspowerwashing.com
                   </a>
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function ContactSection() {
               </button>
 
               <p className="text-sm text-slate-500 text-center">
-                We typically respond within 1-2 business hours
+                We typically respond within 1-2 hours
               </p>
             </form>
           </div>
