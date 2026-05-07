@@ -1,7 +1,9 @@
 "use client";
 
-import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaStar, FaTools, FaBookOpen } from "react-icons/fa";
 import { useState } from "react";
+import Link from "next/link";
+import JobberForm from "../JobberForm";
 
 export default function ContactSection() {
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -49,6 +51,7 @@ export default function ContactSection() {
 
             {/* Contact Info Cards */}
             <div className="space-y-4">
+              {/* Phone */}
               <div className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start gap-4">
                 <div className="bg-brand-secondary-dark/10 p-3 rounded-lg">
                   <FaPhone className="text-brand-secondary-dark text-xl" />
@@ -61,127 +64,67 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start gap-4">
-                <div className="bg-brand-secondary-dark/10 p-3 rounded-lg">
-                  <FaMapMarkerAlt className="text-brand-secondary-dark text-xl" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-brand-dark mb-1">Service Area</h3>
-                  <p className="text-slate-600">
-                    College Park, MD & surrounding DMV area
-                  </p>
-                </div>
-              </div>
-
+              {/* Email */}
               <div className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start gap-4">
                 <div className="bg-brand-secondary-dark/10 p-3 rounded-lg">
                   <FaEnvelope className="text-brand-secondary-dark text-xl" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-brand-dark mb-1">Email</h3>
-                  <a href="mailto:info@patspowerwashing.com" className="text-brand-primary hover:text-brand-primary-dark">
+                  <a href="mailto:pdugan1@patspowerwashing.com" className="text-brand-primary hover:text-brand-primary-dark">
                     pdugan1@patspowerwashing.com
                   </a>
+                </div>
+              </div>
+
+              {/* Services */}
+              <div className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start gap-4">
+                <div className="bg-brand-secondary-dark/10 p-3 rounded-lg">
+                  <FaTools className="text-brand-secondary-dark text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-brand-dark mb-2">Services</h3>
+                  <div className="flex flex-col gap-1">
+                    <Link href="/services/house-washing" className="text-brand-primary hover:text-brand-primary-dark text-sm">House Washing</Link>
+                    <Link href="/services/pressure-washing" className="text-brand-primary hover:text-brand-primary-dark text-sm">Pressure Washing</Link>
+                    <Link href="/services/commercial-pressure-washing" className="text-brand-primary hover:text-brand-primary-dark text-sm">Commercial Services</Link>
+                    <Link href="/services" className="text-brand-secondary-dark hover:opacity-80 text-sm font-semibold mt-1">View All Services →</Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reviews */}
+              <div className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start gap-4">
+                <div className="bg-brand-secondary-dark/10 p-3 rounded-lg">
+                  <FaStar className="text-brand-secondary-dark text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-brand-dark mb-1">Reviews</h3>
+                  <p className="text-slate-600 text-sm mb-2">See what our customers are saying.</p>
+                  <Link href="/reviews" className="text-brand-secondary-dark hover:opacity-80 text-sm font-semibold">Read Reviews →</Link>
+                </div>
+              </div>
+
+              {/* Blog */}
+              <div className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start gap-4">
+                <div className="bg-brand-secondary-dark/10 p-3 rounded-lg">
+                  <FaBookOpen className="text-brand-secondary-dark text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-brand-dark mb-1">Blog</h3>
+                  <p className="text-slate-600 text-sm mb-2">Tips, guides, and updates from Pat.</p>
+                  <Link href="/blog" className="text-brand-secondary-dark hover:opacity-80 text-sm font-semibold">Visit Blog →</Link>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Contact Form */}
+          {/* Right: Jobber Form */}
           <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-200">
-            <form className="space-y-6">
-              {/* Name */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-brand-dark mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition"
-                  placeholder="John Doe"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-brand-dark mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition"
-                  placeholder="john@example.com"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-brand-dark mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition"
-                  placeholder="(240) 968-4892"
-                />
-              </div>
-
-              {/* Service Type */}
-              <div>
-                <label htmlFor="service" className="block text-sm font-semibold text-brand-dark mb-2">
-                  Service Needed *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition"
-                >
-                  <option value="">Select a service</option>
-                  <option value="house-washing">House Washing</option>
-                  <option value="driveway-cleaning">Driveway Cleaning</option>
-                  <option value="patio-deck">Patio/Deck Cleaning</option>
-                  <option value="commercial">Commercial Services</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-brand-dark mb-2">
-                  Additional Details
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition resize-none"
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-brand-secondary-dark hover:opacity-90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl"
-              >
-                Request Free Quote
-              </button>
-
-              <p className="text-sm text-slate-500 text-center">
-                We typically respond within 1-2 hours
-              </p>
-            </form>
+            <h3 className="text-xl font-bold text-brand-dark mb-6">Request a Free Quote</h3>
+            <JobberForm />
           </div>
+
         </div>
       </div>
     </section>

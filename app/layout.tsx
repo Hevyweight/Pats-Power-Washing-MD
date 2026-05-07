@@ -23,6 +23,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+    <head>
+      
+    </head>
       {/* Do NOT put icon <link> tags here. Metadata handles it automatically. */}
       <body className="bg-white text-slate-900 min-h-screen flex flex-col">
         <Navigation />
