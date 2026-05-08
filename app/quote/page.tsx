@@ -11,8 +11,7 @@ export const metadata: Metadata = {
 export default function QuotePage() {
   return (
     <main className="min-h-screen flex flex-col">
-
-      <section className="flex-1 bg-slate-50 flex items-start justify-center px-4 py-16">
+      <section className="flex-1 bg-slate-50 flex items-start justify-center px-4 lg:pt-12 pt-4 pb-16">
         <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-xl">
           <h2 className="text-xl font-bold text-brand-dark mb-6">Request a Free Quote</h2>
           <JobberForm />
