@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactHero from "../components/contact/ContactHero";
 import JobberForm from "../components/JobberForm";
 
 export const metadata: Metadata = {
@@ -9,37 +10,14 @@ export const metadata: Metadata = {
 
 export default function QuotePage() {
   return (
-    <main className="min-h-screen bg-linear-to-b from-brand-dark to-brand-primary-dark flex flex-col items-center justify-start px-4 py-16">
-      
-      {/* Logo */}
-      <div className="mb-8">
-        <img
-          src="/images/logo.png"
-          alt="Pat's Power Washing"
-          className="h-16 w-auto"
-        />
-      </div>
+    <main className="min-h-screen flex flex-col">
 
-      {/* Headline */}
-      <div className="text-center text-white mb-10 max-w-2xl">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-          Get Your Free Quote Today
-        </h1>
-        <p className="text-lg text-slate-200">
-          Serving College Park and the entire DMV area. Fill out the form and Pat will get back to you shortly.
-        </p>
-      </div>
-
-      {/* Jobber Form */}
-      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-xl">
-        <JobberForm />
-      </div>
-
-      {/* Trust line */}
-      <p className="text-slate-300 text-sm mt-6">
-        ⭐ Trusted by homeowners across Maryland, DC & Virginia
-      </p>
-
+      <section className="flex-1 bg-slate-50 flex items-start justify-center px-4 py-16">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-xl">
+          <h2 className="text-xl font-bold text-brand-dark mb-6">Request a Free Quote</h2>
+          <JobberForm />
+        </div>
+      </section>
     </main>
   );
 }
