@@ -2,7 +2,6 @@
 
 import ContactHero from "../components/contact/ContactHero";
 import ContactSection from "../components/contact/ContactSection"; 
-import ContactForm from "../components/contact/ContactForm";
 // OR ContactForm if you're using that instead
 
 export const metadata = {
