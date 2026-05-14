@@ -161,7 +161,7 @@ export default function ServiceAreasPage() {
             <div className="text-slate-600">States Covered</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-brand-primary-dark mb-2">500+</div>
+            <div className="text-4xl font-bold text-brand-primary-dark mb-2">400+</div>
             <div className="text-slate-600">Properties Cleaned</div>
           </div>
           <div>
