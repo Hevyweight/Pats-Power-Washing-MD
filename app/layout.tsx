@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       {/* Do NOT put icon <link> tags here. Metadata handles it automatically. */}
-      <body className="bg-white text-slate-900 min-h-screen flex flex-col">
+      <body className="bg-transparent text-slate-900 min-h-screen flex flex-col">
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />

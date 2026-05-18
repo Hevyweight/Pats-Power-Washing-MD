@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const aboutLinks = [
   { href: "/about", label: "About Us" },
@@ -29,9 +29,20 @@ export default function Navigation() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => setScrolled(window.scrollY > 50);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-slate-100">
+  <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    scrolled
+      ? "bg-brand-secondary-dark shadow-lg"
+      : "bg-transparent"
+  }`}>
       {/* Primary row */}
       <div className="section h-16 md:h-20 flex items-center justify-between gap-4">
         {/* Left: logo */}
@@ -46,7 +57,7 @@ export default function Navigation() {
             quality={90}
             priority
           />
-          <span className="hidden lg:inline font-semibold tracking-tight text-brand-dark leading-none whitespace-nowrap">
+          <span className="hidden lg:inline font-semibold tracking-tight text-white leading-none whitespace-nowrap">
             Pat&#39;s Power Washing
           </span>
         </Link>
@@ -59,7 +70,7 @@ export default function Navigation() {
               type="button"
               onClick={() => setAboutOpen((v) => !v)}
               onBlur={() => setTimeout(() => setAboutOpen(false), 150)}
-              className="inline-flex items-center gap-1 hover:text-brand-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
+              className="inline-flex items-center gap-1 text-white hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
               aria-haspopup="menu"
               aria-expanded={aboutOpen}
             >
@@ -104,7 +115,7 @@ export default function Navigation() {
               type="button"
               onClick={() => setServicesOpen((v) => !v)}
               onBlur={() => setTimeout(() => setServicesOpen(false), 150)}
-              className="inline-flex items-center gap-1 hover:text-brand-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
+              className="inline-flex items-center gap-1 text-white hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
               aria-haspopup="menu"
               aria-expanded={servicesOpen}
             >
@@ -146,10 +157,10 @@ export default function Navigation() {
           </div>
 
           {/* Plain links */}
-          <Link href="/gallery" className="hover:text-brand-primary-dark whitespace-nowrap">
+          <Link href="/gallery" className="text-white hover:text-white/70 whitespace-nowrap">
             Gallery
           </Link>
-          <Link href="/reviews" className="hover:text-brand-primary-dark whitespace-nowrap">
+          <Link href="/reviews" className="text-white hover:text-white/70 whitespace-nowrap">
             Reviews
           </Link>
 
@@ -159,7 +170,7 @@ export default function Navigation() {
               type="button"
               onClick={() => setResourcesOpen((v) => !v)}
               onBlur={() => setTimeout(() => setResourcesOpen(false), 150)}
-              className="inline-flex items-center gap-1 hover:text-brand-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap text-sm"
+              className="inline-flex items-center gap-1 text-white hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap text-sm"
               aria-haspopup="menu"
               aria-expanded={resourcesOpen}
             >
@@ -191,23 +202,26 @@ export default function Navigation() {
             )}
           </div>
 
-          <Link href="/contact" className="hover:text-brand-primary-dark whitespace-nowrap text-sm">
+          <Link href="/contact" className="text-white hover:text-white/70 whitespace-nowrap text-sm">
             Contact
           </Link>
         </nav>
 
         {/* Right: desktop CTAs */}
         <div className="hidden md:flex items-center gap-2 lg:gap-3 shrink-0">
-          <a
-            href="tel:12409684892"
-            className="rounded-xl px-3 lg:px-4 py-2 bg-brand-primary-dark text-white text-sm font-medium shadow hover:opacity-95 whitespace-nowrap"
-          >
+          <a href="tel:12409684892" className={`rounded-xl px-3 lg:px-4 py-2 text-sm font-medium whitespace-nowrap transition-all ${
+            scrolled 
+              ? "bg-white text-brand-secondary-dark" 
+              : "border border-white text-white hover:bg-white/10"
+          }`}>
             240-968-4892
           </a>
-          <Link
-            href="/contact"
-            className="rounded-xl px-3 lg:px-4 py-2 bg-brand-secondary-dark text-white text-sm font-medium shadow hover:opacity-95 whitespace-nowrap"
-          >
+
+          <Link href="/contact" className={`rounded-xl px-3 lg:px-4 py-2 text-sm font-medium whitespace-nowrap transition-all ${
+            scrolled 
+              ? "bg-brand-dark text-white" 
+              : "bg-white text-brand-dark"
+          }`}>
             Get A Free Quote
           </Link>
         </div>
@@ -227,7 +241,7 @@ export default function Navigation() {
             Get A Free Quote
           </Link>
           <button
-            className="inline-flex items-center justify-center h-10 w-10 rounded-md border border-slate-200 text-slate-700 hover:bg-slate-50"
+            className="inline-flex items-center justify-center h-10 w-10 rounded-md border border-white/30 text-white hover:bg-white/10"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen((v) => !v)}
           >
@@ -246,10 +260,10 @@ export default function Navigation() {
 
       {/* Mobile panel */}
       {menuOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white">
+        <div className="md:hidden border-t border-white/10 bg-brand-secondary-dark">
           <div className="section py-3 flex flex-col gap-2">
             <details className="[&_summary]:py-3">
-              <summary className="cursor-pointer select-none">About</summary>
+              <summary className="cursor-pointer select-none text-white">About</summary>
               <ul className="ml-3 mt-1 mb-2 border-l border-slate-200">
                 {aboutLinks.map((r) => (
                   <li key={r.href}>
@@ -265,7 +279,7 @@ export default function Navigation() {
               </ul>
             </details>
             <details className="[&_summary]:py-3">
-              <summary className="cursor-pointer select-none">Services</summary>
+              <summary className="cursor-pointer select-none text-white">Services</summary>
               <ul className="ml-3 mt-1 mb-2 border-l border-slate-200">
                 <li>
                   <Link
@@ -296,7 +310,7 @@ export default function Navigation() {
               Reviews
             </Link>
             <details className="[&_summary]:py-3">
-              <summary className="cursor-pointer select-none">Resources</summary>
+              <summary className="cursor-pointer select-none text-white">Resources</summary>
               <ul className="ml-3 mt-1 mb-2 border-l border-slate-200">
                 {resourceLinks.map((r) => (
                   <li key={r.href}>
@@ -311,7 +325,7 @@ export default function Navigation() {
                 ))}
               </ul>
             </details>
-            <Link href="/contact" onClick={() => setMenuOpen(false)} className="py-2">
+            <Link  href="/contact" onClick={() => setMenuOpen(false)} className="py-2 text-white">
               Contact
             </Link>
             {/*

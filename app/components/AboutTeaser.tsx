@@ -40,7 +40,7 @@ export default function AboutTeaser() {
         {/* Right: Photo instead of blue box */}
         <div className="relative overflow-hidden shadow-soft h-[235px] sm:h-[285px] md:h-[335px] lg:h-[385px] xl:h-[435px] w-full bg-white">
           <Image
-            src="/images/contact.jpg"
+            src="/images/hero.jpg"
             alt="Pat power washing a client's property"
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 50vw, (max-width: 1280px) 45vw, 600px"
