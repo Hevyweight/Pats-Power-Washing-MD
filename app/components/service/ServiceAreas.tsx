@@ -19,7 +19,7 @@ export default function ServiceAreas({
           {locations.map((loc) => (
             <Link
               key={loc.slug}
-              href={`/areas/${loc.slug}`}
+              href={`/service-areas/${loc.slug}`}
               className="bg-white hover:bg-brand-soft hover:text-brand-dark transition rounded-lg p-4 text-center font-medium shadow-sm"
             >
               {loc.name}

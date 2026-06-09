@@ -1,4 +1,4 @@
-// app/areas/[slug]/page.tsx
+// app/serice-areas/[slug]/page.tsx
 import { client } from '@/lib/sanity'
 import { PortableText, PortableTextBlock } from '@portabletext/react'
 import { Fragment } from 'react'

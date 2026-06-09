@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         has: [{ type: 'host', value: 'patspowerwashing.com' }],
         destination: 'https://www.patspowerwashing.com/:path*',
         permanent: true
+      },
+      {
+        source: '/areas/:slug',
+        destination: '/service-areas/:slug',
+        permanent: true
       }
     ]
   }

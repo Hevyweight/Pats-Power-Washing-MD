@@ -32,7 +32,7 @@ export default function ServiceLocationHero({
           {' / '}
           <Link href="/services" className="hover:text-white">Services</Link>
           {' / '}
-          <Link href={`/areas/${city.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-white">{city}</Link>
+          <Link href={`/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-white">{city}</Link>
           {' / '}
           <span className="text-slate-400">{service}</span>
         </div>

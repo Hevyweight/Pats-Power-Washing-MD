@@ -6,12 +6,13 @@ import HowItWorks from "./components/HowItWorks";
 import ReviewsStrip from "./components/Reviews";
 import BottomCTA from "./components/BottomCTA";
 import ContactSection from "./components/contact/ContactSection";
+import WaveDivider from "./components/WaveDivider";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <WhyChoose />
+      <WaveDivider />
       <AboutTeaser />
       <ServicesGrid />
       <HowItWorks />

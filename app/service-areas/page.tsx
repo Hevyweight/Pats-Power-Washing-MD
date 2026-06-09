@@ -1,4 +1,4 @@
-// app/areas/page.tsx
+// app/service-areas/page.tsx
 import Link from "next/link"
 import Image from "next/image"
 import { FaMapMarkerAlt, FaPhone, FaCheckCircle } from "react-icons/fa"
@@ -184,7 +184,7 @@ export default function ServiceAreasPage() {
           {featuredCities.map((city) => (
             <Link
               key={city.slug}
-              href={`/areas/${city.slug}`}
+              href={`/service-areas/${city.slug}`}
               className="group bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden"
             >
               <div className="relative aspect-[4/3] bg-slate-200">
@@ -248,7 +248,7 @@ export default function ServiceAreasPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold">Maryland</h3>
-                  <Link href="/areas/maryland" className="text-brand-primary-dark text-sm hover:underline">
+                  <Link href="/service-areas/maryland" className="text-brand-primary-dark text-sm hover:underline">
                     View Maryland →
                   </Link>
                 </div>
@@ -277,7 +277,7 @@ export default function ServiceAreasPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold">Washington, DC</h3>
-                  <Link href="/areas/washington-dc" className="text-brand-primary-dark text-sm hover:underline">
+                  <Link href="/service-areas/washington-dc" className="text-brand-primary-dark text-sm hover:underline">
                     View DC →
                   </Link>
                 </div>
@@ -310,7 +310,7 @@ export default function ServiceAreasPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold">Northern Virginia</h3>
-                  <Link href="/areas/virginia" className="text-brand-primary-dark text-sm hover:underline">
+                  <Link href="/service-areas/virginia" className="text-brand-primary-dark text-sm hover:underline">
                     View Virginia →
                   </Link>
                 </div>

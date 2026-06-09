@@ -38,13 +38,13 @@ useEffect(() => {
 }, []);
 
   return (
-  <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+  <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-in-out ${
     scrolled
       ? "bg-brand-secondary-dark shadow-lg"
       : "bg-transparent"
   }`}>
       {/* Primary row */}
-      <div className="section h-16 md:h-20 flex items-center justify-between gap-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8 h-20 md:h-24 flex items-center justify-between gap-4">
         {/* Left: logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Pat's Power Washing — Home">
           <Image
@@ -57,20 +57,23 @@ useEffect(() => {
             quality={90}
             priority
           />
-          <span className="hidden lg:inline font-semibold tracking-tight text-white leading-none whitespace-nowrap">
+          <span className="hidden lg:inline text-lg font-bold tracking-tight text-white leading-none whitespace-nowrap">
             Pat&#39;s Power Washing
           </span>
         </Link>
 
-        {/* Center: desktop nav */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-sm">
+        {/* Right: nav + CTAs grouped together */}
+        <div className="hidden md:flex items-center gap-5 lg:gap-7">
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-lg font-bold">
          {/* About dropdown */}
           <div className="relative">
             <button
               type="button"
               onClick={() => setAboutOpen((v) => !v)}
               onBlur={() => setTimeout(() => setAboutOpen(false), 150)}
-              className="inline-flex items-center gap-1 text-white hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
+              className="inline-flex items-center gap-1 text-white/90 hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
               aria-haspopup="menu"
               aria-expanded={aboutOpen}
             >
@@ -115,7 +118,7 @@ useEffect(() => {
               type="button"
               onClick={() => setServicesOpen((v) => !v)}
               onBlur={() => setTimeout(() => setServicesOpen(false), 150)}
-              className="inline-flex items-center gap-1 text-white hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
+              className="inline-flex items-center gap-1 text-white/90 hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
               aria-haspopup="menu"
               aria-expanded={servicesOpen}
             >
@@ -157,10 +160,10 @@ useEffect(() => {
           </div>
 
           {/* Plain links */}
-          <Link href="/gallery" className="text-white hover:text-white/70 whitespace-nowrap">
+          <Link href="/gallery" className="text-white/90 hover:text-white/70 whitespace-nowrap">
             Gallery
           </Link>
-          <Link href="/reviews" className="text-white hover:text-white/70 whitespace-nowrap">
+          <Link href="/reviews" className="text-white/90 hover:text-white/70 whitespace-nowrap">
             Reviews
           </Link>
 
@@ -170,7 +173,7 @@ useEffect(() => {
               type="button"
               onClick={() => setResourcesOpen((v) => !v)}
               onBlur={() => setTimeout(() => setResourcesOpen(false), 150)}
-              className="inline-flex items-center gap-1 text-white hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap text-sm"
+              className="inline-flex items-center gap-1 text-white/90 hover:text-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 rounded-md px-1.5 py-0.5 whitespace-nowrap"
               aria-haspopup="menu"
               aria-expanded={resourcesOpen}
             >
@@ -202,25 +205,25 @@ useEffect(() => {
             )}
           </div>
 
-          <Link href="/contact" className="text-white hover:text-white/70 whitespace-nowrap text-sm">
+          <Link href="/contact" className="text-white/90 hover:text-white/70 whitespace-nowrap">
             Contact
           </Link>
         </nav>
 
-        {/* Right: desktop CTAs */}
-        <div className="hidden md:flex items-center gap-2 lg:gap-3 shrink-0">
-          <a href="tel:12409684892" className={`rounded-xl px-3 lg:px-4 py-2 text-sm font-medium whitespace-nowrap transition-all ${
-            scrolled 
-              ? "bg-white text-brand-secondary-dark" 
-              : "border border-white text-white hover:bg-white/10"
+        {/* Desktop CTAs */}
+
+          <a href="tel:12409684892" className={`rounded-lg px-7 py-3 text-base font-bold whitespace-nowrap transition-all duration-200 ${
+            scrolled
+              ? "bg-white text-brand-secondary-dark"
+              : "border-2 border-white text-white/90 hover:bg-white/10"
           }`}>
             240-968-4892
           </a>
 
-          <Link href="/contact" className={`rounded-xl px-3 lg:px-4 py-2 text-sm font-medium whitespace-nowrap transition-all ${
-            scrolled 
-              ? "bg-brand-dark text-white" 
-              : "bg-white text-brand-dark"
+          <Link href="/contact" className={`rounded-lg px-7 py-3 text-base font-bold whitespace-nowrap transition-all duration-200 ${
+            scrolled
+              ? "bg-brand-dark text-white"
+              : "bg-white text-brand-dark hover:bg-white/90"
           }`}>
             Get A Free Quote
           </Link>
