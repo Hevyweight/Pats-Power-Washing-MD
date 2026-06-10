@@ -167,7 +167,7 @@
 
   <!-- FAQ Page (Priority 0.6) -->
   <url>
-    <loc>https://www.patspowerwashing.com/faq</loc>
+    <loc>https://www.patspowerwashing.com/faqs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

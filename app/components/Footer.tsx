@@ -176,7 +176,7 @@ export default function Footer() {
               <Link href="/blog" className="block hover:text-brand-soft transition">
                 Blog
               </Link>
-              <Link href="/faq" className="block hover:text-brand-soft transition">
+              <Link href="/faqs" className="block hover:text-brand-soft transition">
                 FAQs
               </Link>
             </div>
