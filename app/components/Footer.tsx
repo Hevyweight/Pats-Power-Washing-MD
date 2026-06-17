@@ -9,7 +9,7 @@ const links = [
   { href: "/gallery", label: "Portfolio" },
   { href: "/service-areas", label: "Service Area" },
   { href: "/blog", label: "Resources" },
-  { href: "/service-areas", label: "Who We Serve" },
+  { href: "/who-we-serve", label: "Who We Serve" },
   { href: "/contact", label: "Contact" },
   { href: "/services", label: "Services" },
   { href: "/reviews", label: "Reviews" },

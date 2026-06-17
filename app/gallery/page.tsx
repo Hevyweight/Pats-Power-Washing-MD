@@ -3,6 +3,7 @@
 
 import { client } from '@/lib/sanity'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 // Updated query to get videos from Sanity
 const videosQuery = `*[_type == "instagramPost" && mediaType == "video"] | order(displayOrder asc, postedDate desc) {
@@ -147,24 +148,24 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
-      {/* Hero Section */}
-     <section
-        className="relative bg-linear-to-b from-brand-dark to-brand-primary-dark text-white py-20 overflow-hidden"
-      >
-        {/* Subtle overlay for readability (same as service hero) */}
-        <div className="absolute inset-0 bg-black/10"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-          {/* Header */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg mb-6">
-            My Work Gallery
+      {/* Hero */}
+      <section className="relative h-[90vh] flex flex-col overflow-hidden pt-20">
+        <Image
+          src="/images/v-2/after.jpg"
+          alt="Pat's Power Washing Gallery"
+          fill
+          className="object-cover object-bottom"
+          priority
+          quality={90}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 h-full">
+          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
+            Our Work
           </h1>
-
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto drop-shadow">
-            See the transformations I&apos;ve delivered across Maryland, DC, and Northern Virginia
-          </p>
+          <h2 className="text-2xl md:text-4xl font-semibold uppercase tracking-[0.2em] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
+            Real Results Across <span className="text-brand-primary">Maryland, DC & Virginia</span>
+          </h2>
         </div>
       </section>
 

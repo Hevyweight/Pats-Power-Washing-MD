@@ -54,9 +54,9 @@ export default function ServiceAreasPage() {
     <div className="bg-black">
 
       {/* Hero */}
-      <section className="relative h-[90vh] flex flex-col overflow-hidden pt-20">
+      <section className="relative h-[80vh] flex flex-col overflow-hidden pt-20">
         <Image
-          src="/images/v-2/service_hero.jpg"
+          src="/images/v-2/serviceAreas_hero.jpg"
           alt="Pat's Power Washing Service Areas"
           fill
           className="object-cover object-top"
@@ -76,25 +76,25 @@ export default function ServiceAreasPage() {
 
       {/* Cards section */}
       <section className="bg-black py-20">
-        <div className="section">
+        <div className="px-4 md:px-8 lg:px-16">
 
           {/* Header */}
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-4 md:ml-64">
             <div className="w-10 h-px bg-brand-primary" />
             <p className="text-sm font-semibold uppercase tracking-widest text-white/70">Where We Work</p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12 md:ml-64">
             Find Your <span className="text-brand-primary">Area</span>
           </h2>
 
           {/* Background container panel */}
           <div className="bg-[#1C1C1C] rounded-3xl p-8 md:p-12">
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 justify-items-center">
               {featuredCities.map((city) => (
                 <Link
                   key={city.slug}
                   href={`/service-areas/${city.slug}`}
-                  className="relative rounded-3xl overflow-hidden h-[400px] w-[280px] flex flex-col justify-center items-center group"
+                  className="relative rounded-3xl overflow-hidden h-[500] w-full flex flex-col justify-center items-center group"
                 >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
