@@ -134,7 +134,7 @@ export default function AboutPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-white/70">Why Choose Us</p>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12">
-            What Makes Pat&apos;s <span className="text-brand-primary">Different</span>
+            What Makes Us <span className="text-brand-primary">Different</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <div className="w-16 h-px bg-brand-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-              Watch Pat In <span className="text-brand-primary">Action</span>
+              Watch a quick <span className="text-brand-primary">Video</span>
             </h2>
           </div>
           <div className="relative mx-auto w-full max-w-4xl aspect-video rounded-3xl overflow-hidden">
