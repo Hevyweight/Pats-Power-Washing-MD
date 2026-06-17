@@ -6,52 +6,32 @@ import { FaPhone, FaStar, FaShieldAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+    <section className="relative h-[85vh] flex flex-col justify-start overflow-hidden pt-20">
       
       {/* Background Image */}
       <Image
-        src="/images/Hero_Placeholder2.png"
+        src="/images/v-2/hero.jpg"
         alt="Pat's Power Washing"
         fill
-        className="object-cover object-center"
+        className="object-cover md:object-[center_0%]"
+        style={{ objectPosition: '70% 0%' }}
         priority
         quality={90}
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 py-32">
-        
-        {/* Eyebrow */}
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-secondary">
-          Serving the DMV Area
-        </p>
-
+      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 mt-20">
         {/* Headline */}
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight max-w-4xl mb-6 drop-shadow-xl">
-          DMV&apos;s Premier Exterior Cleaning
+        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight max-w-8xl mb-12 [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
+          Pat&apos;s Power Washing
         </h1>
-
-        {/* CTAs */}
-        {/* <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <Link
-            href="/contact"
-            className="bg-brand-secondary-dark hover:opacity-90 px-10 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg"
-          >
-            Get A Free Quote
-          </Link>
-          
-          <a
-            href="tel:2409684892"
-            className="bg-white/10 hover:bg-white/20 border border-white/30 px-10 py-4 rounded-xl font-semibold text-lg inline-flex items-center justify-center gap-2 transition-all"
-          >
-            <FaPhone />
-            240-968-4892
-          </a>
-        </div> */}
-
+        {/* Sub-headline */}
+        <h2 className="text-2xl md:text-6xl mt-16 font-semibold uppercase tracking-[0.2em] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
+          Serving The <span className="text-brand-primary">DMV</span>
+        </h2>
       </div>
     </section>
   );

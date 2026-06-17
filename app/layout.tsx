@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Script from "next/script";
+import { Ubuntu } from 'next/font/google'
 
 export const metadata: Metadata = {
   title: "Pat's Power Washing | DMV Pressure Washing",
@@ -21,9 +22,16 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={ubuntu.variable}>
       <head>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
@@ -49,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       {/* Do NOT put icon <link> tags here. Metadata handles it automatically. */}
-      <body className="bg-transparent text-slate-900 min-h-screen flex flex-col">
+      <body className="bg-black text-white min-h-screen flex flex-col overflow-x-hidden">
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
