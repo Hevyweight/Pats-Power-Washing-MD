@@ -1,158 +1,166 @@
-// app/gallery/page.tsx
 'use client'
 
-import { client } from '@/lib/sanity'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { client } from '@/lib/sanity'
+import imageUrlBuilder from '@sanity/image-url'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
-// Updated query to get videos from Sanity
-const videosQuery = `*[_type == "instagramPost" && mediaType == "video"] | order(displayOrder asc, postedDate desc) {
-  _id,
-  "videoUrl": videoFile.asset->{url}.url,
-  videoPosterFilename,
-  caption,
-  instagramUrl,
-  postedDate,
-  altText,
-  featured,
-  mediaType
-}`
 
-type SanityVideo = {
-  _id: string
-  videoUrl?: string  // Made optional to catch null values
-  videoPosterFilename?: string
-  caption?: string
-  instagramUrl?: string
-  postedDate: string
-  altText?: string
-  featured?: boolean
-  mediaType?: string
+const builder = imageUrlBuilder(client)
+function urlFor(source: SanityImageSource) {
+  return builder.image(source)
 }
 
-// Video Card Component with play button
-function VideoCard({ video }: { video: SanityVideo }) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  
-  // Check if videoUrl exists
-  if (!video.videoUrl) {
-    return (
-      <div className="flex flex-col">
-        <div className="aspect-[9/16] bg-red-500 flex items-center justify-center p-4">
-          <div className="text-white text-center">
-            <p className="font-bold mb-2">⚠️ Missing Video Filename</p>
-            <p className="text-sm">Video ID: {video._id}</p>
-            <p className="text-sm mt-2">Go to Sanity Studio and add the video filename</p>
-          </div>
-        </div>
-        <div className="bg-gray-900 text-white px-4 py-3">
-          <p className="text-sm font-medium">{video.caption || 'Missing filename'}</p>
-        </div>
-      </div>
-    )
-  }
-  
-  const videoSrc = video.videoUrl
-  const posterSrc = video.videoPosterFilename ? `/videos/${video.videoPosterFilename}` : undefined
+const galleryQuery = `*[_type == "galleryItem"] | order(featured desc, displayOrder asc, postedDate desc) {
+  _id,
+  mediaType,
+  "imageUrl": image.asset->url,
+  "imageAspect": image.asset->metadata.dimensions.aspectRatio,
+  "videoUrl": videoFile.asset->url,
+  title,
+  caption,
+  serviceTag,
+  featured,
+  altText,
+  postedDate,
+}`
 
-  if (!isPlaying) {
-    return (
-      <>
-        <div 
-          className="relative cursor-pointer aspect-[9/16] overflow-hidden bg-gray-900 group"
+const serviceTags = [
+  { label: 'All', value: 'all' },
+  { label: 'House Washing', value: 'house-washing' },
+  { label: 'Driveway Cleaning', value: 'driveway-cleaning' },
+  { label: 'Roof Cleaning', value: 'roof-cleaning' },
+  { label: 'Deck & Fence', value: 'deck-fence-cleaning' },
+  { label: 'Pressure Washing', value: 'pressure-washing' },
+  { label: 'Commercial', value: 'commercial-services' },
+]
+
+type GalleryItem = {
+  _id: string
+  mediaType: 'photo' | 'video'
+  imageUrl?: string
+  imageAspect?: number
+  videoUrl?: string
+  title?: string
+  caption?: string
+  serviceTag?: string
+  featured?: boolean
+  altText?: string
+  postedDate: string
+}
+
+function VideoCard({ item }: { item: GalleryItem }) {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [posterUrl, setPosterUrl] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!item.videoUrl) return
+    const video = document.createElement('video')
+    video.crossOrigin = 'anonymous'
+    video.src = item.videoUrl
+    video.currentTime = 1
+    video.addEventListener('seeked', () => {
+      const canvas = document.createElement('canvas')
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
+      canvas.getContext('2d')?.drawImage(video, 0, 0)
+      setPosterUrl(canvas.toDataURL('image/jpeg'))
+    })
+  }, [item.videoUrl])
+
+  if (!item.videoUrl) return null
+
+  return (
+    <div className="relative w-full overflow-hidden bg-[#1C1C1C]">
+      {!isPlaying ? (
+        <div
+          className="relative cursor-pointer group"
           onClick={() => setIsPlaying(true)}
         >
-          {/* Thumbnail Image */}
-          {posterSrc && (
+          {posterUrl ? (
             <img
-              src={posterSrc}
-              alt={video.altText || video.caption || 'Video thumbnail'}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                // Fallback: if poster doesn't exist, hide this and show black bg
-                e.currentTarget.style.display = 'none'
-              }}
+              src={posterUrl}
+              alt={item.altText || item.caption || 'Video'}
+              className="w-full object-cover"
             />
+          ) : (
+            <div className="w-full aspect-video bg-[#272727]" />
           )}
-          
-          {/* Play Button Overlay */}
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
-            <div className="w-20 h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
-              <svg className="w-10 h-10 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
+            <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
+              <svg className="w-8 h-8 text-brand-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
               </svg>
             </div>
           </div>
-
+          {item.caption && (
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+              <p className="text-white text-sm font-medium">{item.caption}</p>
+            </div>
+          )}
         </div>
-        
-        {/* Caption Below */}
-        <div className="bg-gray-900 text-white px-4 py-3">
-          <p className="text-sm font-medium">{video.caption || 'Power washing project'}</p>
-        </div>
-      </>
-    )
-  }
-
-  // Show video player when clicked
-  return (
-    <>
-      <div className="relative overflow-hidden bg-gray-900">
+      ) : (
         <video
-          className="w-full h-full object-cover aspect-[9/16]"
-          src={videoSrc}
-          poster={posterSrc}
+          className="w-full"
+          src={item.videoUrl}
           controls
           autoPlay
           playsInline
-          preload="auto"
-        >
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      
-      {/* Caption Below */}
-      <div className="bg-gray-900 text-white px-4 py-3">
-        <p className="text-sm font-medium">{video.caption || 'Power washing project'}</p>
-      </div>
-    </>
+        />
+      )}
+    </div>
+  )
+}
+
+function PhotoCard({ item }: { item: GalleryItem }) {
+  if (!item.imageUrl) return null
+  return (
+    <div className="relative w-full h-full overflow-hidden group">
+      <img
+        src={item.imageUrl}
+        alt={item.altText || item.caption || 'Gallery photo'}
+        className="w-full h-full object-cover"
+      />
+      {item.caption && (
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-end">
+          <p className="text-white text-sm font-medium p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {item.caption}
+          </p>
+        </div>
+      )}
+    </div>
   )
 }
 
 export default function GalleryPage() {
-  const [videos, setVideos] = useState<SanityVideo[]>([])
+  const [items, setItems] = useState<GalleryItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [activeTag, setActiveTag] = useState('all')
 
   useEffect(() => {
-    async function fetchVideos() {
-      try {
-        console.log('Fetching videos from Sanity...')
-        const fetchedVideos = await client.fetch(videosQuery)
-        console.log('Fetched videos:', fetchedVideos)
-        
-        if (Array.isArray(fetchedVideos)) {
-          setVideos(fetchedVideos)
-        } else {
-          setError('Unexpected data format from Sanity')
-        }
-      } catch (error) {
-        console.error('Error fetching videos:', error)
-        setError(error instanceof Error ? error.message : 'Unknown error')
-      } finally {
-        setIsLoading(false)
-      }
-    }
-    fetchVideos()
+    client.fetch(galleryQuery).then((data) => {
+      setItems(data)
+      setIsLoading(false)
+    })
   }, [])
 
+  const filtered = activeTag === 'all'
+    ? items
+    : items.filter((i) => i.serviceTag === activeTag)
+
+  // Split into 3 columns for masonry
+  const columns: GalleryItem[][] = [[], [], []]
+  filtered.forEach((item, i) => columns[i % 3].push(item))
+
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
+    <div className="bg-black min-h-screen">
+
       {/* Hero */}
       <section className="relative h-[90vh] flex flex-col overflow-hidden pt-20">
         <Image
           src="/images/v-2/after.jpg"
-          alt="Pat's Power Washing Gallery"
+          alt="Pat's Power Washing Services"
           fill
           className="object-cover object-bottom"
           priority
@@ -164,114 +172,93 @@ export default function GalleryPage() {
             Our Work
           </h1>
           <h2 className="text-2xl md:text-4xl font-semibold uppercase tracking-[0.2em] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
-            Real Results Across <span className="text-brand-primary">Maryland, DC & Virginia</span>
+            Real Results Across THE <span className="text-brand-primary">DMV</span>
           </h2>
         </div>
       </section>
 
-      {/* Video Gallery Section */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Project Videos
-          </h2>
-          <p className="text-lg text-gray-600">
-            Watch me in action delivering spotless results
-          </p>
+      {/* Filter Bar */}
+      <section className="bg-black sticky top-16 z-30 py-4 border-b border-white/10">
+        <div className="section ">
+          <div className="flex flex-wrap justify-center gap-3 sm:flex-nowrap sm:overflow-x-auto sm:scrollbar-hide sm:justify-start">
+            {serviceTags.map((tag) => (
+              <button
+                key={tag.value}
+                onClick={() => setActiveTag(tag.value)}
+                className={`px-5 py-2 h-16 text-sm font-semibold uppercase tracking-wider transition-colors duration-200 rounded-md ${
+                  activeTag === tag.value
+                    ? 'bg-brand-primary text-white'
+                    : 'bg-white/10 text-white/60 hover:bg-white/20 hover:text-white'
+                }`}
+              >
+                {tag.label}
+              </button>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Debug info
-          {!isLoading && (
-            <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded">
-              <p className="text-sm text-blue-900">
-                <strong>Debug:</strong> Found {videos.length} videos in Sanity
-              </p>
+      {/* Masonry Grid */}
+      <section className="bg-black py-16">
+        <div className="section">
+          {isLoading ? (
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="mb-6 break-inside-avoid rounded-2xl bg-[#1C1C1C] animate-pulse"
+                  style={{ height: `${[300, 400, 250, 350, 450, 300][i]}px` }}
+                />
+              ))}
+            </div>
+            // Alternate uniform grid
+            // <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            //   {filtered.map((item) => (
+            //     <div key={item._id} className="aspect-video">
+            //       {item.mediaType === 'video'
+            //         ? <VideoCard item={item} />
+            //         : <PhotoCard item={item} />
+            //       }
+            //     </div>
+            //   ))}
+            // </div>
+          ) : filtered.length === 0 ? (
+            <div className="text-center py-24">
+              <p className="text-white/40 text-lg">No items found for this service.</p>
+            </div>
+          ) : (
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+              {filtered.map((item) => (
+                <div key={item._id} className="mb-6 break-inside-avoid">
+                  {item.mediaType === 'video'
+                    ? <VideoCard item={item} />
+                    : <PhotoCard item={item} />
+                  }
+                </div>
+              ))}
             </div>
           )}
-        */}
-
-        {error && (
-          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded">
-            <p className="text-sm text-red-900">
-              <strong>Error:</strong> {error}
-            </p>
-          </div>
-        )}
-
-        {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="aspect-[9/16] bg-gray-200 animate-pulse rounded-xl" />
-            ))}
-          </div>
-        ) : videos.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {videos.map((video) => (
-              <div 
-                key={video._id} 
-                className="flex flex-col overflow-hidden rounded-xl bg-gray-900 shadow-lg hover:shadow-2xl transition-all duration-300"
-              >
-                <VideoCard video={video} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p className="text-yellow-900 text-lg font-semibold mb-2">
-              No videos found in Sanity
-            </p>
-            <p className="text-yellow-800 text-sm">
-              Make sure you:
-              <br />1. Updated your Sanity schema to the hybrid version
-              <br />2. Created Instagram posts with mediaType = &#34;video&#34;
-              <br />3. Added the videoFilename field
-            </p>
-          </div>
-        )}
-      </section>
-
-      {/* Instagram CTA Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Follow My Work on Instagram
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              See daily updates and behind-the-scenes content
-            </p>
-            <a 
-              href="https://www.instagram.com/patspowerwashing_dmv/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-              Follow Me on Instagram
-            </a>
-          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready for Your Transformation?
+      {/* CTA */}
+      <section className="bg-brand-primary py-20">
+        <div className="section text-center">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+            Ready for a Cleaner Property?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Let me bring the same results to your property
+          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+            Get a free, no-obligation estimate. We serve all of Maryland, DC, and Northern Virginia.
           </p>
-          <a 
+          <a
             href="/contact"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-white text-brand-primary font-extrabold text-lg px-10 py-4 rounded-full hover:bg-black hover:text-white transition-colors duration-300"
           >
-            Get Your Free Quote
+            Get a Free Estimate
           </a>
         </div>
       </section>
+
     </div>
   )
 }
