@@ -1,43 +1,63 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HouseLine, RoadHorizon, SolarRoof, Waves, Building } from "@phosphor-icons/react/dist/ssr";
+
 
 const services = [
-  {
+   {
     name: "House Washing",
     slug: "house-washing",
     description: "Soft wash treatments that remove dirt, mold, and algae without damaging your siding.",
-    image: "/images/v-2/house-washing.jpg",
+    icon: <HouseLine size={64} color="#5DBBFA" weight="light" />,
   },
   {
     name: "Driveway Cleaning",
     slug: "driveway-cleaning",
     description: "High-pressure cleaning that blasts away oil stains, tire marks, and years of buildup.",
-    image: "/images/v-2/driveway-cleaning.jpg",
+    icon: <RoadHorizon size={64} color="#5DBBFA" weight="light" />,
   },
   {
     name: "Roof Cleaning",
     slug: "roof-cleaning",
     description: "Safe low-pressure soft washing that eliminates black streaks, moss, and lichen.",
-    image: "/images/v-2/roof-cleaning.jpg",
+    icon: <SolarRoof size={64} color="#5DBBFA" weight="light" />,
   },
   {
     name: "Deck & Fence Cleaning",
     slug: "deck-fence-cleaning",
     description: "Restore weathered wood and vinyl to like-new condition before staining or sealing.",
-    image: "/images/v-2/deck-fence-cleaning.jpg",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 28h56" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M4 40h56" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M12 16v36" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M24 16v36" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M36 16v36" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M48 16v36" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M12 16l6-8 6 8" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M36 16l6-8 6 8" stroke="#5DBBFA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
-  {
+   {
     name: "Pressure Washing",
     slug: "pressure-washing",
     description: "Versatile high-pressure cleaning for patios, sidewalks, retaining walls, and more.",
-    image: "/images/v-2/pressure-washing.jpg",
+    icon: <Waves size={64} color="#5DBBFA" weight="light" />,
   },
   {
     name: "Commercial Services",
     slug: "commercial-services",
     description: "Fleet washing, storefronts, parking lots, and large-scale commercial properties.",
-    image: "/images/v-2/commercial-services.jpg",
+    icon: <Building size={64} color="#5DBBFA" weight="light" />,
   },
+];
+
+const stats = [
+  { value: "500+", label: "Jobs Completed" },
+  { value: "5★", label: "Average Rating" },
+  { value: "10+", label: "Years Experience" },
+  { value: "DMV", label: "MD, DC & VA" },
 ];
 
 export default function ServicesPage() {
@@ -65,50 +85,103 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Cards */}
+      {/* Intro */}
       <section className="bg-black py-20">
         <div className="section">
-
-          {/* Header */}
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-px bg-brand-primary" />
-            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">What We Do</p>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-2xl md:text-3xl font-semibold text-white leading-relaxed">
+              Every property is different and we get that. Pat&apos;s Power Washing has 
+              cleaned everything from suburban driveways to commercial storefronts across 
+              the DMV, and that range of experience means we know how to handle whatever 
+              your property throws at us. 
+              <br /><br />
+              No cookie-cutter approach, just the right method 
+              for the job every time.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12">
-            Choose Your <span className="text-brand-primary">Service</span>
+        </div>
+      </section>
+
+      {/* Service Cards */}
+      <section className="bg-black pb-20">
+        <div className="px-4 md:px-8 lg:px-16">
+          
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-4 md:ml-64">
+            <div className="w-10 h-px bg-brand-primary" />
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">Choose a Service</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12 md:ml-64">
+            What Can We <span className="text-brand-primary">Clean For You?</span>
           </h2>
 
+          {/* Background container panel */}
           <div className="bg-[#1C1C1C] rounded-3xl p-8 md:p-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service) => (
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="relative rounded-3xl overflow-hidden h-[400px] w-full flex flex-col justify-end group"
+                  className="relative bg-[#272727] rounded-2xl p-8 flex flex-col items-center justify-center text-center group border border-white/5 h-[320]"
                 >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${service.image})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-300" />
-                  <div className="relative z-10 p-6">
-                    <h3 className="text-2xl font-extrabold text-white mb-2 [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
-                      {service.name}
-                    </h3>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="mt-4 inline-flex items-center gap-2 text-brand-primary font-semibold text-sm uppercase tracking-wider">
-                      Learn More
-                      <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </div>
+                  <div className="absolute top-4 right-4 w-8 h-8 rounded-md bg-brand-primary/10 flex items-center justify-center group-hover:bg-brand-primary transition-colors duration-300">
+                    <svg className="w-4 h-4 text-brand-primary group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                  {service.icon}
+                  <div className="mt-6">
+                    <h3 className="text-xl font-extrabold text-white mb-2">{service.name}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed">{service.description}</p>
                   </div>
                 </Link>
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Trust Stats */}
+      <section className="bg-[#1C1C1C] py-16">
+        <div className="section">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-4xl md:text-5xl font-extrabold text-brand-primary mb-2">{stat.value}</p>
+                <p className="text-white/60 text-sm uppercase tracking-widest font-semibold">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Review Pull Quote */}
+      <section className="bg-black py-20">
+        <div className="section">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-2xl md:text-3xl font-semibold text-white leading-relaxed mb-6">
+              &ldquo;Pat did an incredible job on our driveway and house. It looks brand new I couldn&apos;t believe the difference. Highly recommend.&rdquo;
+            </p>
+            <p className="text-brand-primary font-semibold uppercase tracking-widest text-sm">— Verified Google Review</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-brand-primary py-20">
+        <div className="section text-center">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+            Ready for a Cleaner Property?
+          </h2>
+          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+            Get a free, no-obligation estimate. We serve all of Maryland, DC, and Northern Virginia.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-xl font-bold bg-white text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-200"
+          >
+            Get A Free Quote
+          </Link>
         </div>
       </section>
 
