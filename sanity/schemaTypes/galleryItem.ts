@@ -1,12 +1,10 @@
 // schemas/galleryItem.ts
 import { defineField, defineType } from 'sanity'
-import { ImagesIcon } from '@sanity/icons'
 
 export default defineType({
   name: 'galleryItem',
   title: 'Gallery',
   type: 'document',
-  icon: ImagesIcon,
   fields: [
     defineField({
       name: 'mediaType',
