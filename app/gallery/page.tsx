@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { client } from '@/lib/sanity'
 import imageUrlBuilder from '@sanity/image-url'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import Link from 'next/link'
 
 
 const builder = imageUrlBuilder(client)
@@ -250,12 +251,12 @@ export default function GalleryPage() {
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
             Get a free, no-obligation estimate. We serve all of Maryland, DC, and Northern Virginia.
           </p>
-          <a
+          <Link
             href="/contact"
-            className="inline-block bg-white text-brand-primary font-extrabold text-lg px-10 py-4 rounded-full hover:bg-black hover:text-white transition-colors duration-300"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-4xl font-bold bg-white text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-200"
           >
-            Get a Free Estimate
-          </a>
+            Get A Free Quote
+          </Link>
         </div>
       </section>
 

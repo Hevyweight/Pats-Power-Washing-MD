@@ -6,13 +6,13 @@ import { FaInstagram, FaFacebookF, FaTiktok, FaLinkedinIn } from "react-icons/fa
 
 const links = [
   { href: "/about", label: "About" },
-  { href: "/gallery", label: "Portfolio" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/service-areas", label: "Service Area" },
   { href: "/blog", label: "Resources" },
-  { href: "/who-we-serve", label: "Who We Serve" },
-  { href: "/contact", label: "Contact" },
-  { href: "/services", label: "Services" },
   { href: "/reviews", label: "Reviews" },
+  { href: "/services", label: "Services" },
+  { href: "/contact", label: "Contact" },
+  { href: "/sitemap", label: "Sitemap" },
 ];
 
 export default function Footer() {
