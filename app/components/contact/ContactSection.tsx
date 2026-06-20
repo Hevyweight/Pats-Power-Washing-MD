@@ -3,7 +3,7 @@
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaStar, FaTools, FaBookOpen } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
-import JobberForm from "../JobberForm";
+import JobberForm from "./JobberForm";
 
 export default function ContactSection() {
   const [mapLoaded, setMapLoaded] = useState(false);

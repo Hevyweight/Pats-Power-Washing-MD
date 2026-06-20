@@ -1,67 +1,38 @@
-// app/api/contact/route.ts
-import { NextResponse } from "next/server";
-import { connectToDatabase } from "@/lib/mongodb";
-import { Contact } from "@/models/Contact";
-import { sendContactEmail } from "@/lib/email";
+import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
-  try {
-    const body = await request.json();
-    const {
-      name,
-      phone,
-      email,
-      address,
-      service,
-      preferred,
-      referral,
-    } = body;
+  const body = await request.json()
 
-    if (!name || !phone || !email) {
-      return NextResponse.json(
-        { error: "Name, phone, and email are required." },
-        { status: 400 }
-      );
+  const formData = new FormData()
+  formData.append('first_name', body.firstName)
+  formData.append('last_name', body.lastName)
+  formData.append('email', body.email)
+  formData.append('phone', body.phone)
+  formData.append('street', body.address)
+  formData.append('city', body.city)
+  formData.append('state', body.state)
+  formData.append('zip', body.zip)
+  formData.append('note', `Service: ${body.service}\n\n${body.message}`)
+
+  const res = await fetch(
+    'https://clienthub.getjobber.com/client_hubs/9b374c6f-63f6-43ea-8b26-34fbc28a4679/public/work_request/embedded_work_request_form?form_id=2195092',
+    {
+      method: 'POST',
+      body: formData,
     }
+  )
 
-    // 1) Save to DB
-    await connectToDatabase();
-    await Contact.create({
-      name,
-      phone,
-      email,
-      address,
-      service,
-      preferred,
-      referral,
-      source: "website",
-    });
+    console.log('Jobber status:', res.status)
+    const text = await res.text()
+    console.log('Jobber response:', text)
 
-    // 2) Email Pat
-    try {
-      await sendContactEmail({
-        name,
-        phone,
-        email,
-        address,
-        service,
-        preferred,
-        referral,
-      });
-    } catch (e) {
-      console.error("Email error:", e);
-      // optional: still return success because lead is stored
-    }
-
-    return NextResponse.json(
-      { success: true, message: "Quote request received." },
-      { status: 201 }
-    );
-  } catch (err) {
-    console.error("Contact POST error:", err);
-    return NextResponse.json(
-      { error: "Unexpected server error." },
-      { status: 500 }
-    );
+    if (!res.ok) {
+      return NextResponse.json({ error: 'Failed to submit' }, { status: 500 })
   }
+
+  if (!res.ok) {
+    return NextResponse.json({ error: 'Failed to submit' }, { status: 500 })
+  }
+
+  return NextResponse.json({ success: true })
 }

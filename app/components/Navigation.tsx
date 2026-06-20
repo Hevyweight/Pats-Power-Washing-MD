@@ -291,8 +291,8 @@ useEffect(() => {
       </div>
 
       {/* Mobile panel — fullscreen overlay */}
-      <div className={`md:hidden fixed inset-0 z-50 w-screen overflow-hidden pointer-events-none transition-all ${menuOpen ? "visible" : "invisible delay-300"}`}>
-         <div className={`absolute inset-0 bg-brand-primary flex flex-col px-8 py-6 transition-transform duration-300 ease-out ${menuOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full"}`}>
+      <div className={`md:hidden fixed inset-0 z-50 w-screen overflow-hidden pointer-events-none transition-all  ${menuOpen ? "visible" : "invisible delay-300"}`}>
+         <div className={`absolute inset-0 bg-brand-primary flex flex-col px-8 py-6 overflow-y-auto transition-transform duration-300 ease-out ${menuOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full"}`}>
           {/* Close button top right */}
           <div className="flex justify-end">
             <button

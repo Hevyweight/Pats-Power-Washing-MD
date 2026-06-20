@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContactHero from "../components/contact/ContactHero";
-import JobberForm from "../components/JobberForm";
+import JobberForm from "../components/contact/JobberForm";
 
 export const metadata: Metadata = {
   title: "Get a Free Quote | Pat's Power Washing",

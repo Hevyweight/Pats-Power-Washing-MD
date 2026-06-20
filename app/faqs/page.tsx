@@ -26,7 +26,7 @@ export default function FAQPage() {
     : faqs.filter((f) => f.category === activeCategory)
 
   return (
-    <div className="bg-black min-h-screen">
+  <div className="bg-black min-h-screen">
 
     {/* Header */}
     <section className="bg-black pt-40 pb-16">

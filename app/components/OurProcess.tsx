@@ -69,7 +69,7 @@ export default function OurProcess() {
             {/* CTA */}
             <div className="flex justify-center">
               <Link
-                href="/contact"
+                href="/about"
                 className="inline-flex items-center justify-between rounded-lg w-full max-w-[400] md:max-w-[525] gap-2 md:gap-3 pl-3 pr-3 py-3 text-xl md:text-3xl font-bold transition-all duration-200 bg-white text-brand-primary hover:bg-brand-primary hover:text-white"
               >
                 Learn More About Our Process

@@ -4,20 +4,21 @@ import { client } from '@/lib/sanity'
 import { allBlogPostsQuery } from '@/lib/sanity/queries/blog'
 import BlogCard from '../components/blog/BlogCard'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: "Blog - Power Washing Tips & Guides | Pat's Power Washing",
-  description: "Expert power washing tips, maintenance guides, product reviews, and comparisons from Pat's Power Washing serving the DMV area.",
+  description: "Expert power washing tips, maintenance guides, and comparisons from Pat's Power Washing serving the DMV area.",
 }
 
-export const revalidate = 3600 // Revalidate every hour
+export const revalidate = 3600
 
 const postTypes = [
-  { value: 'all', label: 'All Posts', icon: '📚' },
-  { value: 'blogPostHowTo', label: 'How-To Guides', icon: '💡' },
-  { value: 'blogPostBestTop', label: 'Best & Top Lists', icon: '⭐' },
-  { value: 'blogPostCompleteGuide', label: 'Complete Guides', icon: '📖' },
-  { value: 'blogPostComparison', label: 'Comparisons', icon: '⚖️' },
+  { value: 'all', label: 'All Posts' },
+  { value: 'blogPostHowTo', label: 'How-To Guides' },
+  { value: 'blogPostBestTop', label: 'Best & Top Lists' },
+  { value: 'blogPostCompleteGuide', label: 'Complete Guides' },
+  { value: 'blogPostComparison', label: 'Comparisons' },
 ]
 
 export default async function BlogPage({
@@ -27,197 +28,110 @@ export default async function BlogPage({
 }) {
   const { type } = await searchParams
   const allPosts = await client.fetch(allBlogPostsQuery)
-  
+
   const selectedType = type || 'all'
   const filteredPosts = selectedType === 'all'
     ? allPosts
     : allPosts.filter((post: any) => post._type === selectedType)
 
-  // Get featured posts (first 3 most recent)
-  const featuredPosts = allPosts.slice(0, 3)
-
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
-      {/* Blog Hero */}
-      <section
-        className="relative bg-gradient-to-b from-brand-dark to-brand-primary-dark text-white py-20 overflow-hidden"
-      >
-        {/* Subtle overlay */}
-        <div className="absolute inset-0 bg-black/10"></div>
+    <div className="bg-black min-h-screen">
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg mb-6">
-              Power Washing Blog
-            </h1>
-
-            <p className="text-lg md:text-xl text-slate-200 drop-shadow mb-0">
-              Expert tips, comprehensive guides, product reviews, and detailed
-              comparisons. Everything you need to know about power washing.
-            </p>
-
-          </div>
+      {/* Hero */}
+      <section className="relative h-[90vh] flex flex-col overflow-hidden pt-20">
+        <Image
+          src="/images/v-2/fixing.jpg"
+          alt="Pat's Power Washing Blog"
+          fill
+          className="object-cover object-[center_80%]"
+          priority
+          quality={90}
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 h-full">
+          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
+            The Blog
+          </h1>
+          <h2 className="text-2xl md:text-4xl font-semibold uppercase tracking-[0.2em] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
+            Tips & Guides for <span className="text-brand-primary">DMV Homeowners</span>
+          </h2>
         </div>
       </section>
 
-      {/* Featured Posts */}
-      {featuredPosts.length > 0 && selectedType === 'all' && (
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Latest Articles
-            </h2>
-            <p className="text-gray-600">
-              Fresh content to help you maintain your property
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredPosts.map((post: any) => (
-              <BlogCard key={post._id} post={post} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Post Type Filter */}
-      <section className="py-8 border-y border-gray-200 bg-white sticky top-0 z-10 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
-            {postTypes.map((type) => (
+      {/* Filter Bar */}
+      <section className="bg-black sticky top-16 z-30 py-4 border-b border-white/10">
+        <div className="section">
+          <div className="flex flex-wrap justify-center gap-3 sm:flex-nowrap sm:overflow-x-auto sm:scrollbar-hide">
+            {postTypes.map((t) => (
               <Link
-                key={type.value}
-                href={`/blog${type.value !== 'all' ? `?type=${type.value}` : ''}`}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium whitespace-nowrap transition-all ${
-                  selectedType === type.value
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                key={t.value}
+                href={`/blog${t.value !== 'all' ? `?type=${t.value}` : ''}`}
+                className={`px-5 py-2 h-12 text-sm font-semibold uppercase tracking-wider transition-colors duration-200 rounded-md whitespace-nowrap flex items-center justify-center ${
+                  selectedType === t.value
+                    ? 'bg-brand-primary text-white'
+                    : 'bg-white/10 text-white/60 hover:bg-white/20 hover:text-white'
                 }`}
               >
-                <span>{type.icon}</span>
-                <span>{type.label}</span>
+                {t.label}
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">
-            {selectedType === 'all' ? 'All Posts' : postTypes.find(t => t.value === selectedType)?.label}
-          </h2>
-          <p className="text-gray-600 mt-1">
-            {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'} found
-          </p>
-        </div>
+      {/* Posts Grid */}
+      <section className="bg-black py-20">
+        <div className="section">
 
-        {filteredPosts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post: any) => (
-              <BlogCard key={post._id} post={post} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12 bg-gray-50 rounded-xl border-2 border-dashed border-gray-300">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full mb-4">
-              <span className="text-3xl">📝</span>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              No posts yet
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Check back soon for new {postTypes.find(t => t.value === selectedType)?.label.toLowerCase()}!
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-px bg-brand-primary" />
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+              {selectedType === 'all' ? 'All Posts' : postTypes.find(t => t.value === selectedType)?.label}
             </p>
-            <Link
-              href="/blog"
-              className="inline-block text-blue-600 hover:text-blue-700 font-medium"
-            >
-              ← View all posts
-            </Link>
           </div>
-        )}
-      </section>
-
-      {/* What You'll Learn Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            What You&#39;ll Learn
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12">
+            {filteredPosts.length} <span className="text-brand-primary">{filteredPosts.length === 1 ? 'Article' : 'Articles'}</span> Found
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {postTypes.slice(1).map((type) => (
-              <div key={type.value} className="bg-white rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-3">{type.icon}</div>
-                <h3 className="font-semibold text-gray-900 mb-2">{type.label}</h3>
-                <p className="text-sm text-gray-600">
-                  {type.value === 'blogPostHowTo' && 'Step-by-step tutorials for DIY success'}
-                  {type.value === 'blogPostBestTop' && 'Top-rated products and services reviewed'}
-                  {type.value === 'blogPostCompleteGuide' && 'In-depth guides covering every detail'}
-                  {type.value === 'blogPostComparison' && 'Side-by-side comparisons to help you decide'}
-                </p>
-              </div>
-            ))}
-          </div>
+
+          {filteredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post: any) => (
+                <BlogCard key={post._id} post={post} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-24 border border-white/10 bg-[#1C1C1C]">
+              <p className="text-white/40 text-lg mb-4">No posts in this category yet.</p>
+              <Link
+                href="/blog"
+                className="text-brand-primary font-semibold hover:underline"
+              >
+                ← View all posts
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Want More Tips?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Get expert power washing advice and exclusive offers delivered to your inbox
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="
-                flex-1 
-                px-6 py-4 
-                rounded-full 
-                bg-transparent
-                border 
-                border-white 
-                text-white
-                placeholder-white/80
-                focus:outline-none 
-                focus:ring-2 
-                focus:ring-white
-              "
-            />
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-colors shadow-lg">
-              Subscribe
-            </button>
-          </div>
-          <p className="text-sm text-blue-200 mt-4">
-            No spam. Unsubscribe anytime.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+      {/* CTA */}
+      <section className="bg-brand-primary py-20">
+        <div className="section text-center">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
             Ready to Get Your Property Cleaned?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Stop reading and start cleaning! Get your free quote today.
+          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+            Stop reading and start cleaning — get your free quote today.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-2xl font-bold bg-white text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-200"
           >
-            Get Free Quote
+            Get a Free Estimate
           </Link>
         </div>
       </section>
+
     </div>
   )
 }

@@ -61,7 +61,7 @@ export default function Aboutus() {
             {/* Read More */}
             <div className="flex justify-center">
               <Link
-                href="/contact"
+                href="/about"
                 className="inline-flex items-center justify-center gap-3 rounded-lg w-80 pl-8 pr-3 py-3 text-3xl font-bold
                  whitespace-nowrap transition-all duration-200 bg-white text-brand-primary 
                  hover:bg-brand-primary hover:text-white"

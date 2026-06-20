@@ -2,8 +2,8 @@
 export const faqs = [
   // Pricing & Services
   {
-    question: "How much does power washing cost?",
-    answer: "Pricing varies based on the size and type of surface. Most residential driveways range from $150-$300, house washing from $200-$500, and decks from $150-$400. I provide free, no-obligation quotes after seeing your property.",
+    question: "How do you price your power washing services?",
+    answer: "Pricing is based on the square footage of the surface being cleaned. Driveways typically run $0.15–$0.25 per sq ft, house washing $0.10–$0.20 per sq ft, and decks $0.25–$0.40 per sq ft depending on condition. Every property is different, so I offer free on-site quotes to give you an exact number before any work begins.",
     category: "Pricing"
   },
   {

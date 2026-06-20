@@ -10,42 +10,42 @@ const featuredCities = [
   {
     name: "College Park, MD",
     slug: "college-park-md",
-    image: "/images/areas/college_park.webp",
+    image: "/images/areas/college-park-md.jpg",
   },
   {
     name: "Silver Spring, MD",
     slug: "silver-spring-md",
-    image: "/images/areas/silver_spring.webp",
+    image: "/images/areas/silver-spring-md.jpg",
   },
   {
     name: "Greenbelt, MD",
     slug: "greenbelt-md",
-    image: "/images/areas/greenbelt.webp",
+    image: "/images/areas/greenbelt-md.jpg",
   },
   {
     name: "Bowie, MD",
     slug: "bowie-md",
-    image: "/images/areas/bowie.webp",
+    image: "/images/areas/bowie-md.jpg",
   },
   {
     name: "Laurel, MD",
     slug: "laurel-md",
-    image: "/images/areas/laurel.webp",
+    image: "/images/areas/laurel-md.jpg",
   },
   {
     name: "Washington, DC",
     slug: "washington-dc",
-    image: "/images/areas/washington_dc.webp",
+    image: "/images/areas/washington-dc.jpg",
   },
   {
     name: "Arlington, VA",
     slug: "arlington-va",
-    image: "/images/areas/arlington.jpg",
+    image: "/images/areas/arlington-va.jpg",
   },
   {
     name: "Alexandria, VA",
     slug: "alexandria-va",
-    image: "/images/areas/alexandria.jpg",
+    image: "/images/areas/alexandria-va.jpg",
   },
 ];
 
