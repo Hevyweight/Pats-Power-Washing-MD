@@ -56,22 +56,22 @@ export default async function LocationPage({
   params
 }: {
   params: Promise<{ slug: string }>
-}) {
+}): Promise<React.ReactElement> {
   const { slug } = await params
 
   const page = await client.fetch<LocationPageData>(`
-    *[_type == "locationPage" && slug.current == $slug][0] {
-      city,
-      state,
-      neighborhoods,
-      localIntro,
-      servicesOffered,
-      metaDescription
-    }
-  `, { slug })
+  *[_type == "locationPage" && slug.current == $slug][0] {
+    city,
+    state,
+    neighborhoods,
+    localIntro,
+    servicesOffered,
+    metaDescription
+  }
+`, { slug })
 
   if (!page) {
-    return notFound()
+    notFound()
   }
 
   const displayServices = page.servicesOffered?.length
