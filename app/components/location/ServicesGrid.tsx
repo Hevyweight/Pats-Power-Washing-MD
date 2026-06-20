@@ -87,6 +87,18 @@ export default function ServicesGrid({ city }: { city: string }) {
             ))}
           </div>
         </div>
+
+        {/* CTA Button outside the dark panel */}
+        <div className="mt-8 flex justify-center">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-3xl 
+                       font-bold bg-white text-brand-primary hover:bg-brand-primary 
+                       hover:text-white transition-all duration-200"
+          >
+            Get a Free Estimate
+          </Link>
+        </div>
       </div>
     </section>
   )

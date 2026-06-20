@@ -85,20 +85,16 @@ export default async function LocationPage({
 
       {/* Hero */}
       <section className="relative h-[90vh] flex flex-col overflow-hidden pt-20">
-        {page.heroImage ? (
-          <Image
-            src={`/images/areas/${slug}.jpg`}
-            alt={`Power washing in ${page.city}, ${page.state}`}
-            fill
-            className="object-cover object-center"
-            priority
-            quality={90}
-          />
-        ) : (
-          <div className="absolute inset-0 bg-[#1C1C1C]" />
-        )}
+        <Image
+          src={`/images/locations/${slug}.jpg`}
+          alt={`Power washing in ${page.city}, ${page.state}`}
+          fill
+          className="object-cover object-center"
+          priority
+          quality={90}
+        />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 h-full">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 h-full mb-24 xl:mb-48">
           <h1 className="text-6xl md:text-8xl font-extrabold leading-tight mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
             {page.city}
           </h1>
@@ -164,7 +160,7 @@ export default async function LocationPage({
       <LocationServicesGrid city={page.city} />
 
       {/* Reviews Widget */}
-      <section className="bg-black py-20">
+      <section className="bg-black pt-4 pb-20">
         <div className="section">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-16 h-px bg-brand-primary" />
@@ -192,7 +188,7 @@ export default async function LocationPage({
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-2xl font-bold bg-white text-brand-primary hover:bg-black hover:text-white transition-all duration-200"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-3xl font-bold bg-white text-brand-primary hover:bg-black hover:text-white transition-all duration-200"
           >
             Get a Free Estimate
           </Link>
