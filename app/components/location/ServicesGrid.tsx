@@ -48,7 +48,7 @@ const services = [
   },
   {
     name: "Commercial Services",
-    slug: "commercial-services",
+    slug: "commercial-pressure-washing",
     description: "Fleet washing, storefronts, parking lots, and large-scale commercial properties.",
     icon: <Building size={64} color="#5DBBFA" weight="light" />,
   },
@@ -93,8 +93,8 @@ export default function ServicesGrid({ city }: { city: string }) {
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-3xl 
-                       font-bold bg-white text-brand-primary hover:bg-brand-primary 
-                       hover:text-white transition-all duration-200"
+                       font-bold bg-white text-brand-primary hover:bg-black 
+                       hover:text-brand-primary transition-all duration-200"
           >
             Get a Free Estimate
           </Link>

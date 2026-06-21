@@ -4,7 +4,7 @@ import Image from "next/image";
 const steps = [
   { n: "1", t: "Request a free quote", desc: "Fill out our simple online form or give us a call." },
   { n: "2", t: "Get a fast estimate", desc: "We'll get back to you quickly with a clear, upfront price." },
-  { n: "3", t: "Schedule your clean", desc: "Pick a time that works for you — we show up on time, every time." },
+  { n: "3", t: "Schedule your clean", desc: "Pick a time that works for you, then we show up on time, every time." },
   { n: "4", t: "Enjoy the results", desc: "Sit back and watch your property transform." },
 ];
 
@@ -69,7 +69,7 @@ export default function OurProcess() {
             {/* CTA */}
             <div className="flex justify-center">
               <Link
-                href="/about"
+                href="/about#why-choose-us"
                 className="inline-flex items-center justify-between rounded-lg w-full max-w-[400] md:max-w-[525] gap-2 md:gap-3 pl-3 pr-3 py-3 text-xl md:text-3xl font-bold transition-all duration-200 bg-white text-brand-primary hover:bg-brand-primary hover:text-white"
               >
                 Learn More About Our Process

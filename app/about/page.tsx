@@ -14,7 +14,7 @@ const values = [
       </svg>
     ),
     title: "Owner-Operated",
-    desc: "You work directly with Pat on every job — no crews, no shortcuts.",
+    desc: "You work directly with Pat on every job. No crews. No shortcuts.",
   },
   {
     icon: (
@@ -32,7 +32,7 @@ const values = [
       </svg>
     ),
     title: "5-Star Quality",
-    desc: "Commercial-grade equipment and a designer's eye for detail on every job.",
+    desc: "Commercial-grade equipment and a thorough eye for detail on every job.",
   },
   {
     icon: (
@@ -41,7 +41,7 @@ const values = [
       </svg>
     ),
     title: "Community First",
-    desc: "Locally owned and operated — proud to serve the DMV community.",
+    desc: "Locally owned and operated. Proudly serving the DMV community.",
   },
 ];
 
@@ -100,25 +100,38 @@ export default function AboutPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
                 The <span className="text-brand-primary">Story</span> Behind Pat&apos;s Power Washing
               </h2>
-              <p className="text-white/70 text-base mb-4 leading-relaxed">
-                Pat&apos;s Power Washing is a locally owned exterior cleaning company built from the ground up by a University of Maryland Landscape Architecture student with a drive to design, build, and create a better future.
-              </p>
-              <p className="text-white/70 text-base mb-8 leading-relaxed">
-                What started as a small side job has grown into a dependable pressure washing service for homeowners, landlords, and small businesses across Maryland, DC, and Northern Virginia. Every job is handled personally — clear communication, careful preparation, and results you can see immediately.
-              </p>
+              <p className="text-white/70 text-sm md:text-base mb-8 leading-relaxed">
+                Pat&apos;s Power Washing is a locally owned exterior cleaning company proudly serving homeowners, landlords, 
+                and small businesses throughout Maryland, Washington DC, and Northern Virginia. We specialize in professional 
+                pressure washing and soft washing services designed to restore curb appeal, protect surfaces, and help properties 
+                look clean, maintained, and cared for year-round. We believe great results come from more than just powerful
+                equipment. Every project starts with clear communication, honest recommendations, and attention to detail from 
+                the first call to the final walkthrough. Whether we&apos;re cleaning a residential driveway, soft washing siding,
+                restoring a weathered patio, or refreshing a commercial storefront, our goal stays the same: deliver noticeable 
+                results and a smooth experience from start to finish. Using commercial-grade equipment and proven cleaning methods, 
+                we safely remove dirt, algae, mildew, stains, and built-up debris while treating each property with care and respect. 
+                No rushed jobs, no unnecessary upsells, and no subcontractors passing work around, just dependable service, 
+                professional workmanship, and a local team that shows up on time, works efficiently, and leaves your property 
+                looking its absolute best.
+            </p>
+            
+              {/* Read More */}
               <div className="flex justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-between gap-3 rounded-lg w-full max-w-[400px] pl-8 pr-3 py-3 text-xl font-bold transition-all duration-200 bg-white text-brand-primary hover:bg-brand-primary hover:text-white"
+                  className="inline-flex items-center justify-center gap-3 rounded-lg w-96 pl-8 pr-3 py-3 text-3xl font-bold
+                  whitespace-nowrap transition-all duration-200 bg-white text-brand-primary 
+                  hover:bg-brand-primary hover:text-white"
                 >
                   Get A Free Quote
-                  <span className="bg-brand-primary rounded-md p-2 shrink-0">
-                    <svg viewBox="0 0 24 24" className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth="2">
+                  <span className="bg-brand-primary rounded-md p-2">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 12h12" />
                     </svg>
                   </span>
                 </Link>
               </div>
+
             </div>
           </div>
         </div>
@@ -127,7 +140,7 @@ export default function AboutPage() {
       <div className="h-16 bg-black"></div>
 
       {/* Values cards */}
-      <section className="bg-black py-20">
+      <section id="why-choose-us" className="bg-black py-20">
         <div className="section">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-px bg-brand-primary" />
@@ -156,11 +169,11 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="w-16 h-px bg-brand-primary" />
-              <p className="text-sm font-semibold uppercase tracking-widest text-white/70">See The Results</p>
+              <p className="text-sm font-semibold uppercase tracking-widest text-white/70">Our Process</p>
               <div className="w-16 h-px bg-brand-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-              Watch a quick <span className="text-brand-primary">Video</span>
+              See How We <span className="text-brand-primary">Get It Done</span>
             </h2>
           </div>
           <div className="relative mx-auto w-full max-w-4xl aspect-video rounded-3xl overflow-hidden">

@@ -121,7 +121,7 @@ export default async function BlogPage({
             Ready to Get Your Property Cleaned?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-            Stop reading and start cleaning — get your free quote today.
+            Stop reading and start cleaning. Get your free quote today!
           </p>
           <Link
             href="/contact"

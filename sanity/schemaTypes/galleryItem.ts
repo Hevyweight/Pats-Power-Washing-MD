@@ -40,7 +40,7 @@ export default defineType({
       title: 'Video File',
       type: 'file',
       options: { accept: 'video/*' },
-      description: 'Upload your video — thumbnail will generate automatically',
+      description: 'Upload your video, then thumbnail will generate automatically',
       hidden: ({ parent }) => parent?.mediaType !== 'video',
       validation: (Rule) =>
         Rule.custom((file, context) => {

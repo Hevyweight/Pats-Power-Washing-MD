@@ -30,6 +30,21 @@ interface LocationPageData {
   metaDescription?: string
 }
 
+const objectPositions: Record<string, string> = {
+  'college-park-md': 'center 20%',
+  'silver-spring-md': 'center 50%',
+  'greenbelt-md': 'center 40%',
+  'bowie-md': 'center 70%',
+  'laurel-md': 'center 50%',
+  'arlington-va': 'center 80%',
+  'alexandria-va': 'center 60%',
+  'washington-dc': 'center 70%',
+  'maryland': 'center 50%',
+  'virginia': 'center 50%',
+  'delaware': 'center 50%',
+  'pennsylvania': 'center 50%',
+}
+
 const portableTextComponents = {
   block: {
     normal: ({ children }: any) => (
@@ -90,6 +105,7 @@ export default async function LocationPage({
           alt={`Power washing in ${page.city}, ${page.state}`}
           fill
           className="object-cover object-center"
+          style={{ objectPosition: objectPositions[slug] || 'center' }}
           priority
           quality={90}
         />

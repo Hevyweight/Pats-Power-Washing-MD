@@ -42,20 +42,15 @@ export default function Aboutus() {
 
             {/* Body */}
             <p className="text-white/70 text-sm md:text-base mb-8 leading-relaxed">
-              Pat&apos;s Power Washing is a locally owned exterior cleaning company
-              serving homeowners, landlords, and small businesses across Maryland,
-              DC, and Northern Virginia. We focus on delivering consistent, high-quality
-              pressure washing and soft washing with professional service from start to finish.
-              Every project is treated with the same level of care — clear communication
-              before we arrive, careful preparation on site, and results you can see immediately.
-              We focus on delivering consistent, high-quality
-              pressure washing and soft washing with professional service from start to finish.
-              Every project is treated with the same level of care — clear communication
-              before we arrive, careful preparation on site, and results you can see immediately.
-              We focus on delivering consistent, high-quality
-              pressure washing and soft washing with professional service from start to finish.
-              Every project is treated with the same level of care — clear communication
-              before we arrive, careful preparation on site, and results you can see immediately.
+              Pat&apos;s Power Washing is a locally owned exterior 
+              cleaning company serving homeowners, landlords, and small businesses across Maryland, DC, 
+              and Northern Virginia. We focus on delivering consistent, high-quality pressure washing
+              and soft washing with professional service from start to finish. Every project gets the 
+              same level of care: clear communication before we arrive, careful preparation on site, 
+              and results you can see immediately. We use commercial-grade equipment and proven soft 
+              wash and pressure wash techniques to handle everything from a single driveway to a full 
+              commercial property. No subcontractors, no shortcuts, just a reliable local team that 
+              shows up on time and leaves your property looking its best.
             </p>
 
             {/* Read More */}

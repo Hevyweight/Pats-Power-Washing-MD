@@ -32,7 +32,7 @@ export default function ServicesGrid() {
 
           {/* CTA */}
           <Link
-            href="/about"
+            href="/contact"
             className="rounded-lg  px-8 py-3 self-center md:self-start text-2xl font-bold whitespace-nowrap transition-all duration-200 bg-white text-brand-primary hover:bg-brand-primary hover:text-brand-gray"
           >
             GET ESTIMATE

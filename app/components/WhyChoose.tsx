@@ -21,8 +21,8 @@ export default function WhyChoose() {
             </h2>
             <p className="mt-3 text-sm md:text-base text-slate-700 max-w-xl">
               We focus on consistent, high-quality results, clear communication, and
-              protecting your property on every job — from single-family homes to
-              small commercial properties.
+              protecting your property on every job. From single-family homes to
+              commercial properties, and everything in between.
             </p>
           </div>
         </div>

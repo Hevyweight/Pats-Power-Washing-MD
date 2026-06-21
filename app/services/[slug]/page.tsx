@@ -19,45 +19,49 @@ const serviceData: Record<string, {
   blockReverse: boolean
   icon: React.ReactNode
   tag: string
+  objectPosition: string
 }> = {
   'house-washing': {
     name: 'House Washing',
     heroHeadline: 'House Washing',
     heroSub: 'Soft Wash Treatments for Your Home',
-    intro: 'Your home\'s exterior takes a beating from Maryland\'s humidity, pollen seasons, and constant moisture. Dirt, mold, mildew, and algae don\'t just look bad — they eat away at your siding over time. Our soft wash treatments use low pressure and professional-grade cleaning solutions to safely remove buildup without damaging your paint, siding, or trim.',
+    intro: 'Your home\'s exterior takes a beating from Maryland\'s humidity, pollen seasons, and constant moisture. Dirt, mold, mildew, and algae don\'t just look bad. They eat away at your siding over time. Our soft wash treatments use low pressure and professional-grade cleaning solutions to safely remove buildup without damaging your paint, siding, or trim.',
     blockHeading: 'Safe for Every Surface Type',
-    blockBody: 'Whether your home has vinyl siding, brick, stucco, wood, or fiber cement — we use the right pressure and solution for your specific material. No guessing, no damage. Just a clean house that stays cleaner longer than a standard pressure wash.',
+    blockBody: 'Whether your home has vinyl siding, brick, stucco, wood, or fiber cement. We use the right pressure and solution for your specific material. No guessing, no damage. Just a clean house that stays cleaner longer than a standard pressure wash.',
     blockReverse: false,
     icon: <HouseLine size={300} color="white" weight="light" />,
     tag: 'house-washing',
+    objectPosition: 'center 62%',
   },
   'driveway-cleaning': {
     name: 'Driveway Cleaning',
     heroHeadline: 'Driveway Cleaning',
     heroSub: 'High-Pressure Surface Cleaning',
-    intro: 'Oil stains, tire marks, rust, and years of ground-in grime can make even a well-kept property look neglected. Our high-pressure driveway cleaning service removes what regular washing can\'t — restoring your concrete, asphalt, or paver surface to like-new condition in a single visit.',
+    intro: 'Oil stains, tire marks, rust, and years of ground-in grime can make even a well-kept property look neglected. Our high-pressure driveway cleaning service removes what regular washing can\'t. Restoring your concrete, asphalt, or paver surface to like-new condition in a single visit.',
     blockHeading: 'Built for Every Surface',
-    blockBody: 'Concrete, asphalt, pavers, brick — each surface needs a different approach. We adjust our pressure and technique based on what we\'re cleaning so you get maximum results without cracking, etching, or damage. Most driveways are done in under two hours.',
+    blockBody: 'Concrete, asphalt, pavers, brick. Each surface needs a different approach. We adjust our pressure and technique based on what we\'re cleaning so you get maximum results without cracking, etching, or damage. Most driveways are done in under two hours.',
     blockReverse: false,
     icon: <RoadHorizon size={300} color="white" weight="light" />,
     tag: 'driveway-cleaning',
+    objectPosition: 'center 84%',
   },
   'roof-cleaning': {
     name: 'Roof Cleaning',
     heroHeadline: 'Roof Cleaning',
     heroSub: 'Low-Pressure Soft Wash Treatments',
-    intro: 'Those black streaks on your roof aren\'t just dirt — it\'s Gloeocapsa Magma, a bacteria that feeds on your shingles and shortens your roof\'s lifespan. Our non-pressure soft wash treatment neutralizes the growth at the source, removing streaks, moss, and lichen without voiding your roof warranty or damaging fragile shingles.',
+    intro: 'Those black streaks on your roof aren\'t just dirt it\'s Gloeocapsa Magma, a bacteria that feeds on your shingles and shortens your roof\'s lifespan. Our non-pressure soft wash treatment neutralizes the growth at the source, removing streaks, moss, and lichen without voiding your roof warranty or damaging fragile shingles.',
     blockHeading: 'Protect Your Roof Investment',
-    blockBody: 'A clean roof lasts longer. Algae and moss trap moisture against your shingles, accelerating wear and leading to costly repairs. Our treatments don\'t just clean — they slow regrowth so your roof stays cleaner for years, not weeks.',
+    blockBody: 'A clean roof lasts longer. Algae and moss trap moisture against your shingles, accelerating wear and leading to costly repairs. Our treatments don\'t just clean they slow regrowth so your roof stays cleaner for years, not weeks.',
     blockReverse: false,
     icon: <SolarRoof size={300} color="white" weight="light" />,
     tag: 'roof-cleaning',
+    objectPosition: 'center 54%',
   },
   'deck-fence-cleaning': {
     name: 'Deck & Fence Cleaning',
     heroHeadline: 'Deck & Fence Cleaning',
-    heroSub: 'Restore Weathered Wood & Vinyl',
-    intro: 'Decks and fences take constant abuse from sun, rain, and humidity. Over time, wood grays out, vinyl turns green, and mold works its way into every crack. Our cleaning process strips away years of buildup and prepares your surfaces for staining or sealing — or just leaves them looking dramatically better on their own.',
+    heroSub: 'Restore Your Deck, Fence & Outdoor Surfaces',
+    intro: 'Decks and fences take constant abuse from sun, rain, and humidity. Over time, wood grays out, vinyl turns green, and mold works its way into every crack. Our cleaning process strips away years of buildup and prepares your surfaces for staining, sealing,  or just leaves them looking dramatically better on their own.',
     blockHeading: 'Ready for Stain or Seal',
     blockBody: 'If you\'re planning to stain or seal your deck this season, a professional clean is the essential first step. Stain applied over dirty wood won\'t bond properly and will peel within months. We prep the surface right so whatever you apply on top lasts.',
     blockReverse: false,
@@ -74,28 +78,31 @@ const serviceData: Record<string, {
       </svg>
     ),
     tag: 'deck-fence-cleaning',
+    objectPosition: 'center 80%',
   },
   'pressure-washing': {
     name: 'Pressure Washing',
     heroHeadline: 'Pressure Washing',
     heroSub: 'Versatile Cleaning for Any Surface',
-    intro: 'From patios and sidewalks to retaining walls and pool decks, our pressure washing service handles it all. We bring commercial-grade equipment and the experience to know exactly how much pressure each surface needs — so you get a deep clean without the risk of damage.',
+    intro: 'From patios and sidewalks to retaining walls and pool decks, our pressure washing service handles it all. We bring commercial-grade equipment and the experience to know exactly how much pressure each surface needs, so you get a deep clean without the risk of damage.',
     blockHeading: 'The Right Pressure for Every Job',
     blockBody: 'Not every surface needs the same treatment. Too much pressure on the wrong surface causes permanent damage. Too little and you\'re just moving dirt around. We\'ve cleaned thousands of surfaces across the DMV and know exactly what each one needs.',
     blockReverse: false,
     icon: <Waves size={300} color="white" weight="light" />,
     tag: 'pressure-washing',
+    objectPosition: 'center 80%',
   },
   'commercial-pressure-washing': {
     name: 'Commercial Pressure Washing',
     heroHeadline: 'Commercial Pressure Washing',
     heroSub: 'Large-Scale Exterior Cleaning for the DMV',
-    intro: 'First impressions matter for your business. A dirty storefront, grimy parking lot, or stained building exterior sends the wrong message to customers before they ever walk in the door. Our commercial cleaning services handle properties of any size — from single storefronts to full office parks and retail centers.',
+    intro: 'First impressions matter for your business. A dirty storefront, grimy parking lot, or stained building exterior sends the wrong message to customers before they ever walk in the door. Our commercial cleaning services handle properties of any size, from single storefronts to full office parks and retail centers.',
     blockHeading: 'Built for Business Properties',
-    blockBody: 'We work around your schedule to minimize disruption to your business. Early mornings, evenings, weekends — whatever works for you. We\'re fully insured for commercial work and experienced with the specific challenges of high-traffic commercial surfaces.',
+    blockBody: 'We work around your schedule to minimize disruption to your business. Early mornings, evenings, or weekends whatever works for you. We\'re fully insured for commercial work and experienced with the specific challenges of high-traffic commercial surfaces.',
     blockReverse: false,
     icon: <Building size={300} color="white" weight="light" />,
     tag: 'commercial-pressure-washing',
+    objectPosition: 'center 80%',
   },
 }
 
@@ -127,7 +134,7 @@ const galleryItems = await client.fetch<GalleryItem[]>(`
     caption,
     altText,
   }
-`, { tag: (service as typeof serviceData[string]).tag })
+`, { tag: service!.tag } as any)
 
   return (
     <div className="bg-black min-h-screen">
@@ -138,7 +145,8 @@ const galleryItems = await client.fetch<GalleryItem[]>(`
           src={`/images/services/${slug}.jpg`}
           alt={service.name}
           fill
-          className="object-cover object-center"
+          className="object-cover md:object-[center_80%]"
+          style={{ objectPosition: service.objectPosition }}
           priority
           quality={90}
         />
@@ -222,7 +230,7 @@ const galleryItems = await client.fetch<GalleryItem[]>(`
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-2xl font-bold bg-white text-brand-primary hover:bg-black hover:text-white transition-all duration-200"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-2xl font-bold bg-white text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-200"
           >
             Get a Free Estimate
           </Link>

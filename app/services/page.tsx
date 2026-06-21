@@ -46,8 +46,8 @@ const services = [
     icon: <Waves size={64} color="#5DBBFA" weight="light" />,
   },
   {
-    name: "Commercial Services",
-    slug: "commercial-services",
+    name: "Commercial Pressure Washing",
+    slug: "commercial-pressure-washing",
     description: "Fleet washing, storefronts, parking lots, and large-scale commercial properties.",
     icon: <Building size={64} color="#5DBBFA" weight="light" />,
   },

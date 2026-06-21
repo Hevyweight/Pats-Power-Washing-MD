@@ -38,7 +38,9 @@ export default function Footer() {
 
             <div>
               <p className="font-bold text-3xl text-brand-primary whitespace-nowrap">Pat&apos;s Power Washing</p>
-              <p className="text-brand-primary text-3xl font-semibold">240-968-4892</p>
+              <a href="tel:2409684892" className="text-brand-primary text-3xl font-semibold hover:text-brand-secondary transition-colors duration-200">
+                240-968-4892
+              </a>
             </div>
 
             <Link

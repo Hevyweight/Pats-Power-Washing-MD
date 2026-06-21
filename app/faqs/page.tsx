@@ -39,7 +39,7 @@ export default function FAQPage() {
           Got <span className="text-brand-primary">Questions?</span>
         </h1>
         <p className="text-white/60 text-lg max-w-xl">
-          Everything you need to know about professional power washing in the DMV — answered.
+          All Your Questions About Professional Power Washing in the DMV Answered.
         </p>
       </div>
     </section>
@@ -100,7 +100,7 @@ export default function FAQPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="bg-black/40 border border-white/10 p-6 flex items-center justify-between group hover:border-brand-primary/40 transition-colors duration-300"
+                className="bg-black/40 border border-white/10 p-6 flex items-center justify-between group transition-colors duration-300"
               >
                 <div>
                   <p className="text-white font-extrabold text-lg">{item.label}</p>
@@ -122,7 +122,7 @@ export default function FAQPage() {
             Still Have Questions?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-lg mx-auto">
-            Reach out directly — we&apos;re happy to walk you through anything before you book.
+            Reach out directly. We&apos;re happy to walk you through anything before you book.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

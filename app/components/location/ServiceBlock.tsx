@@ -14,7 +14,7 @@ export default function ServiceBlock({ heading, body, icon, reverse = false }: S
 
         {/* SVG Card */}
         <div className={`relative w-full md:w-1/2 shrink-0 bg-brand-light flex items-center justify-center min-h-[300px] md:min-h-[500px] ${reverse ? 'rounded-l-4xl' : 'rounded-r-4xl'}`}>
-            <div className="w-125 h-125 rounded-full bg-brand-primary flex items-center justify-center">
+            <div className="w-48 h-48 md:w-125 md:h-125 rounded-full bg-brand-primary flex items-center justify-center">
                 {icon}
             </div>
         </div>
@@ -45,7 +45,7 @@ export default function ServiceBlock({ heading, body, icon, reverse = false }: S
             <div>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 rounded-lg px-8 py-3 text-2xl font-bold transition-all duration-200 bg-white text-brand-primary hover:bg-brand-primary hover:text-white"
+                className="inline-flex items-center justify-center gap-3 rounded-lg px-8 py-3 text-2xl font-bold transition-all duration-200 bg-white text-brand-primary hover:bg-brand-gray hover:text-white"
               >
                 Get a Free Estimate
                 <span className="bg-brand-primary rounded-md p-2">
