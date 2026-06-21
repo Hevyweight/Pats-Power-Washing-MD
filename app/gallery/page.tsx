@@ -160,7 +160,7 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className="relative h-[90vh] flex flex-col overflow-hidden pt-20">
         <Image
-          src="/images/v-2/after.jpg"
+          src="/images/v-2/fixing.jpg"
           alt="Pat's Power Washing Services"
           fill
           className="object-cover object-bottom"

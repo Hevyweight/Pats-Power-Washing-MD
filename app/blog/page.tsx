@@ -40,7 +40,7 @@ export default async function BlogPage({
       {/* Hero */}
       <section className="relative h-[90vh] flex flex-col overflow-hidden pt-20">
         <Image
-          src="/images/v-2/fixing.jpg"
+          src="/images/v-2/after.jpg"
           alt="Pat's Power Washing Blog"
           fill
           className="object-cover object-[center_80%]"
