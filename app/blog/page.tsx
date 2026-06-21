@@ -50,7 +50,7 @@ export default async function BlogPage({
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 h-full">
           <h1 className="text-6xl md:text-8xl font-extrabold leading-tight mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
-            The Blog
+            The Pat&apos;s Power Washing Blog
           </h1>
           <h2 className="text-2xl md:text-4xl font-semibold uppercase tracking-[0.2em] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
             Tips & Guides for <span className="text-brand-primary">DMV Homeowners</span>
