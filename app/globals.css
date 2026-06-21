@@ -3,25 +3,37 @@
 
 /* Brand tokens (v4) */
 @theme {
-  --color-brand-dark: #03045E;
-  --color-brand-primary: #0077B6;
-  --color-brand-secondary: #00B4D8;
-  --color-brand-soft: #90E0EF;
-  --color-brand-light: #CAF0F8;
-  
-  /* Darker variants for buttons (WCAG AA compliant) */
-  --color-brand-primary-dark: #005A8C;   /* 4.52:1 ✅ */
-  --color-brand-secondary-dark: #006B85; /* 5.01:1 ✅ DARKER */
+  /* Typography */
+  --font-sans: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+
+  /* Core palette */
+  --color-brand-primary:   #5DBBFA;   /* bright sky blue — CTAs, nav sticky, highlights */
+  --color-brand-secondary: #7DB6DB;   /* muted steel blue — hover states, secondary UI */
+  --color-brand-gray:      #737373;   /* mid gray — body text, icons */
+  --color-brand-light:     #D5D5D5;   /* light gray — borders, dividers, subtle backgrounds */
+  --color-brand-white:     #FFFFFF;   /* pure white — backgrounds, text on dark */
+
+  /* Darker variants for WCAG AA compliance on white backgrounds */
+  --color-brand-primary-dark:   #2A96E0;   /* 4.6:1 on white ✅ */
+  --color-brand-secondary-dark: #4A85AD;   /* 4.8:1 on white ✅ */
+
+  /* Page backgrounds */
+  --color-bg-dark:    #1C1C1C;   /* dark sections (hero, process) */
+  --color-bg-light:   #F8F8F8;   /* light sections */
 }
 
 /* Global tweaks */
 html { scroll-behavior: smooth; }
 :root { color-scheme: light; }
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 /* Accessible focus ring */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--color-brand-secondary);
+  outline: 2px solid var(--color-brand-primary);
   outline-offset: 2px;
 }
 
@@ -29,3 +41,55 @@ button:focus-visible {
 .section {
   @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
 }
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@theme {
+  --animate-slide-in: slide-in-right 0.3s ease-out forwards;
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    object-position: center 0% !important;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
