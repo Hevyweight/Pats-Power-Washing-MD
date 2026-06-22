@@ -164,22 +164,31 @@ export default function AboutPage() {
       </section>
 
 {/* Video Section */}
-<div className="flex justify-center mb-16">
-  <div className="w-full max-w-sm sm:max-w-2xl rounded-3xl overflow-hidden">
-    <video
-      className="w-full h-175 object-cover object-[center_20%]"
-      controls
-      preload="metadata"
-      playsInline
-    >
-      <source
-        src="/videos/youTube-placeholder.mp4"
-        type="video/mp4"
-      />
-      Your browser does not support video.
-    </video>
+<section className="bg-black pb-20">
+  <div className="section">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="w-10 h-px bg-brand-primary" />
+      <p className="text-sm font-semibold uppercase tracking-widest text-white/70">Our Process</p>
+    </div>
+    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12">
+      See How We <span className="text-brand-primary">Get It Done</span>
+    </h2>
+    <div className="w-full max-w-3xl mx-auto rounded-3xl overflow-hidden">
+      <video
+        className="w-full h-175 aspect-video object-cover object-[center_20%]"
+        controls
+        preload="metadata"
+        playsInline
+      >
+        <source
+          src="/videos/youTube-placeholder.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support video.
+      </video>
+    </div>
   </div>
-</div>
+</section>
 
       {/* Trust/Stats bar */}
       <section className="bg-brand-primary py-16">
