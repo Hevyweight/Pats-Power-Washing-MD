@@ -124,17 +124,23 @@ export default function ContactPage() {
                 Looking to get your property cleaned up? Fill out the form and we&apos;ll get back to you within 24 hours with a free, no-obligation estimate. No pressure, no hassle.
               </p>
 
-              {/* Video */}
-              <div className="aspect-video w-full mb-8 bg-[#1C1C1C]">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/VIDEO_ID_HERE"
-                  title="What to Expect from Pat's Power Washing"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+{/* Video */}
+<div className="flex justify-center mb-8">
+  <div className="w-full max-w-sm sm:max-w-2xl rounded-3xl overflow-hidden mr-4 sm:mr-0">
+    <video
+      className="w-full h-175 object-cover object-[center_20%]"
+      controls
+      preload="metadata"
+      playsInline
+    >
+      <source
+        src="/videos/youTube-placeholder.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support video.
+    </video>
+  </div>
+</div>
 
               {/* Bullets */}
               <ul className="space-y-4 mb-12">
@@ -151,7 +157,7 @@ export default function ContactPage() {
               </ul>
 
               {/* Contact Info */}
-              <div className="space-y-4">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-12">
                 <a
                   href="tel:12409684892"
                   className="flex items-center gap-4 group"
