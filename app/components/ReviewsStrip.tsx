@@ -29,7 +29,7 @@ export default function ReviewsStrip() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/reviews"
-            className="inline-flex items-center justify-between gap-4 rounded-lg w-full max-w-[225px] md:max-w-[300px] px-5 py-3 text-xl md:text-3xl font-bold transition-all duration-200 bg-brand-primary text-white hover:bg-brand-secondary"
+            className="inline-flex items-center justify-between gap-4 rounded-lg w-full max-w-[300] px-5 py-3 text-2xl md:text-3xl font-bold transition-all duration-200 bg-brand-primary text-white hover:bg-brand-secondary"
           >
             More Reviews
             <span className="bg-white rounded-md p-2 shrink-0">
