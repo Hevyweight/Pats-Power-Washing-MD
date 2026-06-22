@@ -1,7 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HouseLine, RoadHorizon, SolarRoof, Waves, Building } from "@phosphor-icons/react/dist/ssr";
+import { BASE_URL } from '@/lib/constants'
 
+
+export const metadata = {
+  title: "Services | Pat's Power Washing",
+  description: "Explore our range of power washing services for homes and businesses in the DMV area.",
+  alternates: {
+    canonical: `${BASE_URL}/services`,
+  }, 
+};
 
 const services = [
    {

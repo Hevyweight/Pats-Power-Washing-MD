@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Script from 'next/script'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import JobberForm from '../components/contact/JobberForm'
+import { BASE_URL } from '@/lib/constants'
+
 
 const services = [
   'House Washing',

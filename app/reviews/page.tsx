@@ -1,5 +1,15 @@
+import { BASE_URL } from "@/lib/constants";
 import Link from "next/link";
 import Script from "next/script";
+
+
+export const metadata = {
+  title: "Reviews | Pat's Power Washing - Maryland, DC & Virginia",
+  description: "Read what our customers have to say about our pressure washing services in Maryland, Washington DC, and Northern Virginia.",
+  alternates: {
+    canonical: `${BASE_URL}/reviews`,
+  }, 
+};
 
 export default function ReviewsPage() {
   return (

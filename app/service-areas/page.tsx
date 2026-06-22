@@ -1,9 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { BASE_URL } from "@/lib/constants";
 
 export const metadata = {
   title: "Service Areas | Pat's Power Washing - Maryland, DC & Virginia",
   description: "Professional pressure washing services throughout Maryland, Washington DC, and Northern Virginia. Find your area and get a free quote today.",
+  alternates: {
+    canonical: `${BASE_URL}/service-areas`,
+  }, 
 };
 
 const featuredCities = [
@@ -89,7 +93,7 @@ export default function ServiceAreasPage() {
 
           {/* Background container panel */}
           <div className="bg-[#1C1C1C] rounded-3xl p-8 md:p-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 justify-items-center h-250">
               {featuredCities.map((city) => (
                 <Link
                   key={city.slug}

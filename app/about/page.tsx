@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BASE_URL } from '@/lib/constants'
+
 
 export const metadata = {
   title: "About | Pat's Power Washing",
   description: "Learn about Pat's Power Washing — locally owned exterior cleaning serving Maryland, DC, and Northern Virginia.",
+  alternates: {
+    canonical: `${BASE_URL}/about`,
+  }, 
 };
 
 const values = [

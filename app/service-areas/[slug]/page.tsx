@@ -6,6 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
 import LocationServicesGrid from '@/app/components/location/ServicesGrid'
+import { BASE_URL } from '@/lib/constants'
+
+
+
 
 const services = [
   { name: 'House Washing', slug: 'house-washing', description: 'Soft wash treatments that remove dirt, mold, and algae without damaging your siding.' },
@@ -241,6 +245,9 @@ export async function generateMetadata({
   return {
     title: `Power Washing in ${page.city}, ${page.state} | Pat's Power Washing`,
     description: page.metaDescription || `Professional power washing services in ${page.city}, ${page.state}. House washing, driveway cleaning, roof cleaning and more.`,
+    alternates: {
+      canonical: `${BASE_URL}/service-areas/${slug}`,
+    },
   }
 }
 

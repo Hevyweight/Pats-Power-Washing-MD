@@ -162,6 +162,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: post.featuredImage ? {
       images: [urlFor(post.featuredImage).width(1200).height(630).url()],
     } : undefined,
+    alternates: {
+      canonical: `https://www.patspowerwashing.com/blog/${slug}`,
+    },
   }
 }
 

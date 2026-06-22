@@ -5,6 +5,8 @@ import Link from "next/link"
 import { useState } from "react"
 import { faqs } from "@/data/faqs"
 import FAQAccordion from "../components/FAQAccordion"
+import { BASE_URL } from "@/lib/constants"
+
 
 const categories = [
   { label: "All", value: "all" },

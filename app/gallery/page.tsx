@@ -6,6 +6,7 @@ import { client } from '@/lib/sanity'
 import imageUrlBuilder from '@sanity/image-url'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import Link from 'next/link'
+import { BASE_URL } from '@/lib/constants'
 
 
 const builder = imageUrlBuilder(client)

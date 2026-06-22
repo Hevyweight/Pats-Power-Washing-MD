@@ -5,10 +5,14 @@ import { allBlogPostsQuery } from '@/lib/sanity/queries/blog'
 import BlogCard from '../components/blog/BlogCard'
 import Link from 'next/link'
 import Image from 'next/image'
+import { BASE_URL } from '@/lib/constants'
 
 export const metadata = {
   title: "Blog - Power Washing Tips & Guides | Pat's Power Washing",
   description: "Expert power washing tips, maintenance guides, and comparisons from Pat's Power Washing serving the DMV area.",
+  alternates: {
+    canonical: `${BASE_URL}/blog`,
+  },
 }
 
 export const revalidate = 3600

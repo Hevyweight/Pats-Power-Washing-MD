@@ -8,6 +8,7 @@ import { client } from '@/lib/sanity'
 import LocationServicesGrid from '@/app/components/location/ServicesGrid'
 import ServiceBlock from '@/app/components/location/ServiceBlock'
 import { HouseLine, RoadHorizon, SolarRoof, Waves, Building } from '@phosphor-icons/react/dist/ssr'
+import { BASE_URL } from '@/lib/constants'
 
 const serviceData: Record<string, {
   name: string
@@ -256,5 +257,8 @@ export async function generateMetadata({
   return {
     title: `${service.name} | Pat's Power Washing`,
     description: service.intro.slice(0, 160),
+    alternates: {
+      canonical: `${BASE_URL}/services/${slug}`,
+    },
   }
 }
