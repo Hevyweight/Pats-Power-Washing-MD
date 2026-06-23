@@ -14,7 +14,7 @@ const serviceLinks = [
   { href: "/services/house-washing", label: "House Washing" },
   { href: "/services/driveway-cleaning", label: "Driveway Cleaning" },
   { href: "/services/roof-cleaning", label: "Roof Cleaning" },
-  // { href: "/services/deck-fence-cleaning", label: "Deck & Fence Cleaning" },
+  { href: "/services/deck-fence-cleaning", label: "Deck & Fence Cleaning" },
   { href: "/services/pressure-washing", label: "Pressure Washing" },
   { href: "/services/commercial-pressure-washing", label: "Commercial Services" },
 ];
