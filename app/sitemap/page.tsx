@@ -6,6 +6,7 @@ const sections = [
     links: [
       { label: "Home", href: "/" },
       { label: "Services", href: "/services" },
+      { label: "Service Areas", href: "/service-areas" },
       { label: "About", href: "/about" },
       { label: "Gallery", href: "/gallery" },
       { label: "Reviews", href: "/reviews" },
