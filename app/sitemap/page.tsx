@@ -19,6 +19,7 @@ const sections = [
       { label: "House Washing", href: "/services/house-washing" },
       { label: "Driveway Cleaning", href: "/services/driveway-cleaning" },
       { label: "Roof Cleaning", href: "/services/roof-cleaning" },
+      { label: "Deck & Fence Cleaning", href: "/services/deck-fence-cleaning" },
       { label: "Pressure Washing", href: "/services/pressure-washing" },
       { label: "Commercial Pressure Washing", href: "/services/commercial-pressure-washing" },
     ],
