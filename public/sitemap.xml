@@ -13,6 +13,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.patspowerwashing.com/service-areas</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://www.patspowerwashing.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -29,6 +34,11 @@
   </url>
   <url>
     <loc>https://www.patspowerwashing.com/reviews</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.patspowerwashing.com/sitemap</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -50,6 +60,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.patspowerwashing.com/services/deck-fence-cleaning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.patspowerwashing.com/services/pressure-washing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -60,34 +75,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Location Hub Pages (Priority 0.8) -->
-  <url>
-    <loc>https://www.patspowerwashing.com/service-areas/maryland</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.patspowerwashing.com/service-areas/washington-dc</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.patspowerwashing.com/service-areas/virginia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.patspowerwashing.com/service-areas/delaware</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.patspowerwashing.com/service-areas/pennsylvania</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Service + Location Pages (Priority 0.7) -->
+  <!-- Location Pages (Priority 0.7) -->
   <url>
     <loc>https://www.patspowerwashing.com/service-areas/college-park-md</loc>
     <changefreq>monthly</changefreq>
@@ -112,6 +100,11 @@
     <loc>https://www.patspowerwashing.com/service-areas/laurel-md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://www.patspowerwashing.com/service-areas/washington-dc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.patspowerwashing.com/service-areas/arlington-va</loc>
