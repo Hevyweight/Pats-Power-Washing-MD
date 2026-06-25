@@ -26,16 +26,12 @@ const sections = [
   {
     title: "Service Areas",
     links: [
-      { label: "Maryland", href: "/service-areas/maryland" },
-      { label: "Washington DC", href: "/service-areas/washington-dc" },
-      { label: "Virginia", href: "/service-areas/virginia" },
-      { label: "Delaware", href: "/service-areas/delaware" },
-      { label: "Pennsylvania", href: "/service-areas/pennsylvania" },
       { label: "College Park, MD", href: "/service-areas/college-park-md" },
       { label: "Silver Spring, MD", href: "/service-areas/silver-spring-md" },
       { label: "Greenbelt, MD", href: "/service-areas/greenbelt-md" },
       { label: "Bowie, MD", href: "/service-areas/bowie-md" },
       { label: "Laurel, MD", href: "/service-areas/laurel-md" },
+      { label: "Washington DC", href: "/service-areas/washington-dc" },
       { label: "Arlington, VA", href: "/service-areas/arlington-va" },
       { label: "Alexandria, VA", href: "/service-areas/alexandria-va" },
     ],
