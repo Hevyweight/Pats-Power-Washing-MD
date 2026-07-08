@@ -8,13 +8,23 @@ export default function Hero() {
   return (
     <section className="relative h-[85vh] flex flex-col justify-start overflow-hidden pt-20">
       
-      {/* Background Image */}
+{/* Desktop Background Image */}
       <Image
         src="/images/v-2/hero.jpg"
         alt="Pat's Power Washing"
         fill
-        className="object-cover md:object-[center_0%]"
+        className="object-cover md:object-[center_0%] hidden md:block"
         style={{ objectPosition: '70% 0%' }}
+        priority
+        quality={90}
+      />
+
+      {/* Mobile Background Image */}
+      <Image
+        src="/images/locations/laurel-md.jpg"
+        alt="Pat's Power Washing"
+        fill
+        className="object-cover block md:hidden"
         priority
         quality={90}
       />
