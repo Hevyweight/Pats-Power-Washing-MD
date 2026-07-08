@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* Mobile Background Image */}
       <Image
-        src="/images/locations/laurel-md.jpg"
+        src="/images/v-2/roof_wash.jpg"
         alt="Pat's Power Washing"
         fill
         className="object-cover block md:hidden"
