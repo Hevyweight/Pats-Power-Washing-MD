@@ -22,6 +22,8 @@ const serviceLinks = [
 const resourceLinks = [
   { href: "/blog", label: "Blog" },
   { href: "/faqs", label: "FAQs" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-conditions", label: "Terms & Conditions" },
 ];
 
 export default function Navigation() {

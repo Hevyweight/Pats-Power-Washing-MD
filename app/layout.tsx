@@ -6,7 +6,7 @@ import Script from "next/script";
 import { Ubuntu } from 'next/font/google'
 
 export const metadata: Metadata = {
-  title: "Pat's Power Washing | DMV Pressure Washing",
+  title: "Pat's Power Washing",
   description: "Professional pressure washing across Maryland, DC, and Virginia.",
   icons: {
     icon: [

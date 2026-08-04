@@ -13,6 +13,8 @@ const links = [
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
   { href: "/sitemap", label: "Sitemap" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-conditions", label: "Terms & Conditions" },
 ];
 
 export default function Footer() {
