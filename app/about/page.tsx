@@ -106,19 +106,32 @@ export default function AboutPage() {
                 The <span className="text-brand-primary">Story</span> Behind Pat&apos;s Power Washing
               </h2>
               <p className="text-white/70 text-sm md:text-base mb-8 leading-relaxed">
-                Pat&apos;s Power Washing is a locally owned exterior cleaning company proudly serving homeowners, landlords, 
-                and small businesses throughout Maryland, Washington DC, and Northern Virginia. We specialize in professional 
-                pressure washing and soft washing services designed to restore curb appeal, protect surfaces, and help properties 
-                look clean, maintained, and cared for year-round. We believe great results come from more than just powerful
-                equipment. Every project starts with clear communication, honest recommendations, and attention to detail from 
-                the first call to the final walkthrough. Whether we&apos;re cleaning a residential driveway, soft washing siding,
-                restoring a weathered patio, or refreshing a commercial storefront, our goal stays the same: deliver noticeable 
-                results and a smooth experience from start to finish. Using commercial-grade equipment and proven cleaning methods, 
-                we safely remove dirt, algae, mildew, stains, and built-up debris while treating each property with care and respect. 
-                No rushed jobs, no unnecessary upsells, and no subcontractors passing work around, just dependable service, 
-                professional workmanship, and a local team that shows up on time, works efficiently, and leaves your property 
-                looking its absolute best.
-            </p>
+                I started working for myself before I really knew what it meant to run a business. 
+                In high school, I spent my free time mowing lawns and doing yard work for people around my hometown. 
+                I liked working outside, but more than anything, I liked the feeling of having something that was mine. 
+                I could find the work, do a good job, and see the result of what I had built for myself.<br/><br/>
+
+                When I left home and went off to college, that entrepreneurial spirit came with me. 
+                I tried a few different businesses and learned plenty from the ones that didn&apos;t work, 
+                but eventually I found myself coming back to what I already knew: working with my hands and 
+                improving people&apos;s properties. That eventually became Pat’s Power Washing.<br/><br/>
+
+                I fell in love with power washing because of how immediate the transformation is. 
+                You can show up to a property in the morning with years of dirt and organic growth covering a house, 
+                driveway, patio, or set of pavers, and leave that afternoon with it looking completely different. 
+                I love being able to stand back at the end of a job and physically see what I accomplished that day.<br/><br/>
+
+                In a lot of ways, that&apos;s the same reason I chose to study Landscape Architecture at the University of Maryland. 
+                I&apos;ve always been drawn to the way a property can be transformed and to the combination of design, construction, 
+                and hands-on work that goes into making that happen.<br/><br/>
+
+                My long-term goal is to take everything I&apos;m learning—from school, from working in the landscape industry, 
+                and from building Pat&apos;s Power Washing—and eventually build a landscape design-build company of my own.<br/><br/>
+
+                For now, Pat&apos;s Power Washing lets me do what got me started in the first place: work on people&apos;s properties, 
+                make a visible difference, and keep building something of my own one job at a time.
+             </p>
+
             
               {/* Read More */}
               <div className="flex justify-center">

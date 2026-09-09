@@ -232,7 +232,7 @@ useEffect(() => {
 
         {/* Desktop CTAs */}
         <Link
-          href="/contact"
+          href="/quote"
           className="rounded-lg px-7 py-3 text-2xl font-bold whitespace-nowrap transition-all 
                      duration-200 bg-white text-brand-primary hover:bg-brand-primary
                     hover:text-brand-gray"
@@ -257,8 +257,18 @@ useEffect(() => {
             />
           </Link>
 
-          {/* Right: phone + hamburger */}
-          <div className="flex items-center gap-4  pt-4">
+          {/* Right: get estimate + phone + hamburger */}
+          <div className="flex items-center gap-4 pt-4">
+
+            {/* Get Estimate button */}
+            <Link
+              href="/quote"
+              className="inline-flex shrink-0 items-center justify-center h-10 sm:h-12 rounded-lg px-3 sm:px-4 text-xs sm:text-sm font-bold whitespace-nowrap transition-all 
+                        duration-200 bg-white text-brand-primary hover:bg-brand-primary
+                        hover:text-brand-gray"
+            >
+              GET ESTIMATE
+            </Link>
 
             {/* Phone button */}
             <a
@@ -287,7 +297,6 @@ useEffect(() => {
                 </svg>
               )}
             </button>
-            
           </div>
         </div>
       </div>
@@ -325,7 +334,8 @@ useEffect(() => {
 
           {/* GET ESTIMATE at bottom */}
           <Link
-              href="/contact"
+              href="/quote"
+              onClick={() => setMenuOpen(false)}
               className="rounded-lg px-8 py-4 m-8 text-2xl font-bold bg-white text-brand-primary
                        hover:bg-brand-primary hover:text-brand-gray text-center"
             >

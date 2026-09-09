@@ -37,20 +37,15 @@ export default function Aboutus() {
 
             {/* Subheading */}
             <p className="text-white font-semibold text-lg mb-3">
-              Locally Owned. DMV Trusted.
+              Read my story about how I started Pat’s Power Washing, what I’ve learned along the way, and where I hope to take it in the years ahead.
             </p>
 
             {/* Body */}
             <p className="text-white/70 text-sm md:text-base mb-8 leading-relaxed">
-              Pat&apos;s Power Washing is a locally owned exterior 
-              cleaning company serving homeowners, landlords, and small businesses across Maryland, DC, 
-              and Northern Virginia. We focus on delivering consistent, high-quality pressure washing
-              and soft washing with professional service from start to finish. Every project gets the 
-              same level of care: clear communication before we arrive, careful preparation on site, 
-              and results you can see immediately. We use commercial-grade equipment and proven soft 
-              wash and pressure wash techniques to handle everything from a single driveway to a full 
-              commercial property. No subcontractors, no shortcuts, just a reliable local team that 
-              shows up on time and leaves your property looking its best.
+              I started working for myself before I really knew what it meant to run a business. 
+              In high school, I spent my free time mowing lawns and doing yard work for people around my hometown. 
+              I liked working outside, but more than anything, I liked the feeling of having something that was mine. 
+              I could find the work, do a good job, and see the result of what I had built for myself...
             </p>
 
             {/* Read More */}

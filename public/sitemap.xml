@@ -23,6 +23,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.patspowerwashing.com/quote</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.patspowerwashing.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const SERVICES = [
   { title: "Roof Washing", image: "/images/v-2/roof_wash.jpg", href: "/services/roof-cleaning" },
-  { title: "Power Wash", image:   "/images/v-2/power_wash.jpg", href: "/services/pressure-washing" },
-  { title: "Soft Wash", image:    "/images/v-2/soft_wash.jpg", href: "/services/house-washing" },
+  { title: "Power Washing", image:   "/images/v-2/power_wash.jpg", href: "/services/pressure-washing" },
+  { title: "Soft Washing", image:    "/images/v-2/soft_wash.jpg", href: "/services/house-washing" },
 ];
 
 export default function ServicesGrid() {
@@ -32,7 +32,7 @@ export default function ServicesGrid() {
 
           {/* CTA */}
           <Link
-            href="/contact"
+            href="/quote"
             className="rounded-lg  px-8 py-3 self-center md:self-start text-2xl font-bold whitespace-nowrap transition-all duration-200 bg-white text-brand-primary hover:bg-brand-primary hover:text-brand-gray"
           >
             GET ESTIMATE

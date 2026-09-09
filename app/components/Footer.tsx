@@ -46,7 +46,7 @@ export default function Footer() {
             </div>
 
             <Link
-              href="/contact"
+              href="/quote"
               className="inline-flex items-center justify-center rounded-lg w-52 py-3 text-2xl font-bold 
                          transition-all duration-200 bg-white text-brand-primary hover:bg-brand-primary hover:text-white"
             >
