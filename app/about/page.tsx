@@ -136,7 +136,7 @@ export default function AboutPage() {
               {/* Read More */}
               <div className="flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/quote"
                   className="inline-flex items-center justify-center gap-3 rounded-lg w-96 pl-8 pr-3 py-3 text-3xl font-bold
                   whitespace-nowrap transition-all duration-200 bg-white text-brand-primary 
                   hover:bg-brand-primary hover:text-white"
@@ -233,7 +233,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/quote"
               className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-xl font-bold bg-white text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-200"
             >
               Get A Free Quote

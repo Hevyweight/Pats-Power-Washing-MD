@@ -253,7 +253,7 @@ export default function GalleryPage() {
             Get a free, no-obligation estimate. We serve all of Maryland, DC, and Northern Virginia.
           </p>
           <Link
-            href="/contact"
+            href="/quote"
             className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-4xl font-bold bg-white text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-200"
           >
             Get A Free Quote
